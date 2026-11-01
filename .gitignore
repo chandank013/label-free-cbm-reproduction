@@ -1,0 +1,23 @@
+# Large datasets -- not tracked, see README for download instructions
+data/CUB_200_2011/
+original_lfcbm/saved_activations/
+original_lfcbm/saved_models/*.pth
+datasets/
+*.tar
+*.tgz
+*.tar.gz
+
+# Python
+__pycache__/
+*.pyc
+MyEnv/
+venv/
+lfcbm-env/
+*.egg-info/
+
+# Jupyter
+.ipynb_checkpoints/
+phase2/
+docs/PHASE2_PLAN.md
+docs/REPLICATION_SUMMARY_TEMPLATE.md
+docs/CONTRIBUTIONS.md
