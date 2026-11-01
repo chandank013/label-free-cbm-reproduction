@@ -1,0 +1,28 @@
+{
+  "dataset": "cub",
+  "model": "lfcbm",
+  "seed": 0,
+  "config": {
+    "dataset": "cub",
+    "concept_set": "data/concept_sets/cub_filtered.txt",
+    "backbone": "resnet18_cub",
+    "clip_name": "ViT-B/16",
+    "device": "cuda",
+    "batch_size": 64,
+    "saga_batch_size": 256,
+    "proj_batch_size": 50000,
+    "feature_layer": "features.final_pool",
+    "activation_dir": "saved_activations",
+    "save_dir": "saved_models",
+    "clip_cutoff": 0.26,
+    "proj_steps": 1000,
+    "interpretability_cutoff": 0.45,
+    "lam": 0.0002,
+    "n_iters": 5000,
+    "print": false
+  },
+  "elapsed_seconds": 562.0570924282074,
+  "paper_reported_accuracy": 74.59,
+  "note": "Fill in 'reproduced_accuracy' after running evaluate_cbm.ipynb on the saved model.",
+  "reproduced_accuracy": 74.16
+}
