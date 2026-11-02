@@ -1,0 +1,32 @@
+{
+  "summary": {
+    "n_concepts": 207,
+    "relevance_mean": 0.6725229894290969,
+    "relevance_median": 0.6787345011051313,
+    "redundancy_mean_abs_corr": 0.2558362150162327,
+    "redundancy_nn_abs_corr": 0.8035485996419046,
+    "frac_concepts_with_dup_act": 0.5700483091787439,
+    "redundancy_mean_text_cos": 0.7121080160140991,
+    "redundancy_nn_text_cos": 0.8909143350550518,
+    "frac_concepts_with_dup_text": 0.43478260869565216,
+    "nnz": 6209,
+    "NEC": 31.045,
+    "frac_concepts_unused": 0.0,
+    "acc_val": 0.7416235208511353,
+    "n_classes": 200,
+    "seed": 2,
+    "dataset": "cub",
+    "filter_mode": "all",
+    "keep_frac": 1.0,
+    "n_before_filter": 331,
+    "n_after_filter": 331,
+    "w_rel": 1.0,
+    "w_red": 1.0,
+    "agg": "max",
+    "method": "baseline",
+    "tag": "_baseline_k100_s2",
+    "runtime_s": 387.3805067539215,
+    "model_dir": "saved_models\\cub_cbm_2026_11_01_18_53_00_baseline_k100_s2"
+  },
+  "removed_by_filter": []
+}

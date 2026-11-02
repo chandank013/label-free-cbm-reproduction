@@ -1,0 +1,531 @@
+{
+  "summary": {
+    "n_concepts": 140,
+    "relevance_mean": 0.6480142054572658,
+    "relevance_median": 0.64760180260402,
+    "redundancy_mean_abs_corr": 0.22910337338691678,
+    "redundancy_nn_abs_corr": 0.7036031151367519,
+    "frac_concepts_with_dup_act": 0.04285714285714286,
+    "redundancy_mean_text_cos": 0.7130615711212158,
+    "redundancy_nn_text_cos": 0.8694797017744609,
+    "frac_concepts_with_dup_text": 0.19285714285714287,
+    "nnz": 5488,
+    "NEC": 27.44,
+    "frac_concepts_unused": 0.0,
+    "acc_val": 0.7366148829460144,
+    "n_classes": 200,
+    "seed": 2,
+    "dataset": "cub",
+    "filter_mode": "greedy",
+    "keep_frac": 0.75,
+    "n_before_filter": 331,
+    "n_after_filter": 248,
+    "w_rel": 0.0,
+    "w_red": 1.0,
+    "agg": "max",
+    "method": "abl_diversity_only",
+    "tag": "_abl_diversity_only_k75_s2",
+    "runtime_s": 641.6552789211273,
+    "model_dir": "saved_models\\cub_cbm_2026_11_02_00_10_09_abl_diversity_only_k75_s2"
+  },
+  "removed_by_filter": [
+    {
+      "concept": "A red eye",
+      "relevance": 0.5996860114457205,
+      "nearest_kept": "red eyes",
+      "corr_with_nearest_kept": 0.8697525253446682
+    },
+    {
+      "concept": "a Scarlet-red body",
+      "relevance": 0.6982106220251731,
+      "nearest_kept": "red feathers",
+      "corr_with_nearest_kept": 0.8630011955465238
+    },
+    {
+      "concept": "a black and white body",
+      "relevance": 0.6782662372876923,
+      "nearest_kept": "a black and white color scheme",
+      "corr_with_nearest_kept": 0.8748552726333904
+    },
+    {
+      "concept": "a black bib with white stripes",
+      "relevance": 0.5503430601450898,
+      "nearest_kept": "a black and white striped back",
+      "corr_with_nearest_kept": 0.7960298585576269
+    },
+    {
+      "concept": "a black cap and bib",
+      "relevance": 0.600720359888036,
+      "nearest_kept": "a black cap on its head",
+      "corr_with_nearest_kept": 0.8300475812106305
+    },
+    {
+      "concept": "a black cap on the female",
+      "relevance": 0.6498453988990349,
+      "nearest_kept": "a black cap on its head",
+      "corr_with_nearest_kept": 0.8525576125033257
+    },
+    {
+      "concept": "a black head with a white beak",
+      "relevance": 0.581173773789225,
+      "nearest_kept": "a small, black head",
+      "corr_with_nearest_kept": 0.7993458864392385
+    },
+    {
+      "concept": "a black wings and tail",
+      "relevance": 0.728655029521809,
+      "nearest_kept": "Glossy black wings",
+      "corr_with_nearest_kept": 0.8703801546955812
+    },
+    {
+      "concept": "a black wingtip",
+      "relevance": 0.6859741010685817,
+      "nearest_kept": "dark wingtips",
+      "corr_with_nearest_kept": 0.8034967814938697
+    },
+    {
+      "concept": "a brown back and wings",
+      "relevance": 0.611241239857996,
+      "nearest_kept": "brownish wings with white bars",
+      "corr_with_nearest_kept": 0.8022529837230881
+    },
+    {
+      "concept": "a brown or gray back",
+      "relevance": 0.650754095435839,
+      "nearest_kept": "a grayish-brown head",
+      "corr_with_nearest_kept": 0.8304544264321834
+    },
+    {
+      "concept": "a brownish back",
+      "relevance": 0.7085548030939692,
+      "nearest_kept": "brownish plumage",
+      "corr_with_nearest_kept": 0.8574631770521883
+    },
+    {
+      "concept": "a brownish cap",
+      "relevance": 0.6437846028271396,
+      "nearest_kept": "a brown cap with a white cheek",
+      "corr_with_nearest_kept": 0.8409320357170611
+    },
+    {
+      "concept": "a dark blue or black back",
+      "relevance": 0.7294833178127115,
+      "nearest_kept": "a dark blue-black upper body",
+      "corr_with_nearest_kept": 0.7982941641779724
+    },
+    {
+      "concept": "a grayish-white body",
+      "relevance": 0.6951727573711761,
+      "nearest_kept": "white body with gray wings",
+      "corr_with_nearest_kept": 0.8509686975899726
+    },
+    {
+      "concept": "a greenish back",
+      "relevance": 0.6225355778310612,
+      "nearest_kept": "olive-green back",
+      "corr_with_nearest_kept": 0.8721851458956561
+    },
+    {
+      "concept": "a greenish-yellow back",
+      "relevance": 0.8355777465183937,
+      "nearest_kept": "a yellow throat and breast",
+      "corr_with_nearest_kept": 0.8286555504189432
+    },
+    {
+      "concept": "a greenish-yellow body",
+      "relevance": 0.8240202282065039,
+      "nearest_kept": "a yellowish bill",
+      "corr_with_nearest_kept": 0.8397273975528148
+    },
+    {
+      "concept": "a grey back",
+      "relevance": 0.6027205379679136,
+      "nearest_kept": "gray head",
+      "corr_with_nearest_kept": 0.8016383248450627
+    },
+    {
+      "concept": "a large, green head",
+      "relevance": 0.5675091600475237,
+      "nearest_kept": "green head",
+      "corr_with_nearest_kept": 0.8826249978809818
+    },
+    {
+      "concept": "a large, white body",
+      "relevance": 0.6824939907083337,
+      "nearest_kept": "a slender, white body",
+      "corr_with_nearest_kept": 0.8377904570360366
+    },
+    {
+      "concept": "a long tail with white bars",
+      "relevance": 0.4677133881576451,
+      "nearest_kept": "a long tail with a white tip",
+      "corr_with_nearest_kept": 0.8123175806042882
+    },
+    {
+      "concept": "a long, thin tail",
+      "relevance": 0.39981655409071165,
+      "nearest_kept": "a long, thin body",
+      "corr_with_nearest_kept": 0.8040769728552041
+    },
+    {
+      "concept": "a medium-sized duck",
+      "relevance": 0.7540134413856374,
+      "nearest_kept": "a duck-like bird",
+      "corr_with_nearest_kept": 0.8479045562193086
+    },
+    {
+      "concept": "a pale grayish-white underbody",
+      "relevance": 0.718345404783095,
+      "nearest_kept": "white body with gray wings",
+      "corr_with_nearest_kept": 0.8061508808316326
+    },
+    {
+      "concept": "a pinkish breast",
+      "relevance": 0.543531638772661,
+      "nearest_kept": "a rosy breast",
+      "corr_with_nearest_kept": 0.8230434162862792
+    },
+    {
+      "concept": "a purple-red head and breast",
+      "relevance": 0.6275615369416165,
+      "nearest_kept": "a red head",
+      "corr_with_nearest_kept": 0.8058908011369046
+    },
+    {
+      "concept": "a raucous voice",
+      "relevance": 0.3770162435601974,
+      "nearest_kept": "a loud, high-pitched song",
+      "corr_with_nearest_kept": 0.8900263702173897
+    },
+    {
+      "concept": "a red cap on the head",
+      "relevance": 0.655753707645378,
+      "nearest_kept": "a red cap on the male",
+      "corr_with_nearest_kept": 0.8325561103617587
+    },
+    {
+      "concept": "a red face",
+      "relevance": 0.6722653938363651,
+      "nearest_kept": "a red belly",
+      "corr_with_nearest_kept": 0.8790248560005077
+    },
+    {
+      "concept": "a red throat",
+      "relevance": 0.6721793005623992,
+      "nearest_kept": "a red throat pouch",
+      "corr_with_nearest_kept": 0.8432755405456684
+    },
+    {
+      "concept": "a reddish-brown back",
+      "relevance": 0.6645753915976692,
+      "nearest_kept": "a rusty-brown breast band",
+      "corr_with_nearest_kept": 0.8264074907277786
+    },
+    {
+      "concept": "a reddish-brown body",
+      "relevance": 0.6772653796123533,
+      "nearest_kept": "a rusty-brown breast band",
+      "corr_with_nearest_kept": 0.8406547131126008
+    },
+    {
+      "concept": "a reddish-brown color",
+      "relevance": 0.6970845365227013,
+      "nearest_kept": "a rusty brown color",
+      "corr_with_nearest_kept": 0.8516925293758267
+    },
+    {
+      "concept": "a rusty-brown back",
+      "relevance": 0.6715533584920396,
+      "nearest_kept": "a rusty brown color",
+      "corr_with_nearest_kept": 0.8806362986583205
+    },
+    {
+      "concept": "a small, blue body",
+      "relevance": 0.6653743731070775,
+      "nearest_kept": "a small, blue bird",
+      "corr_with_nearest_kept": 0.8915554319840628
+    },
+    {
+      "concept": "a small, brown bird",
+      "relevance": 0.763078162313772,
+      "nearest_kept": "a small, brown body",
+      "corr_with_nearest_kept": 0.8583988222656479
+    },
+    {
+      "concept": "a white chest",
+      "relevance": 0.5120571395246678,
+      "nearest_kept": "a white chest and belly",
+      "corr_with_nearest_kept": 0.8699684889203009
+    },
+    {
+      "concept": "a white front",
+      "relevance": 0.6567313289860838,
+      "nearest_kept": "a white collar around the neck",
+      "corr_with_nearest_kept": 0.7997154146063393
+    },
+    {
+      "concept": "a white throat and breast",
+      "relevance": 0.754829458328764,
+      "nearest_kept": "a white throat and belly",
+      "corr_with_nearest_kept": 0.9380998197629066
+    },
+    {
+      "concept": "a yellow beak",
+      "relevance": 0.817179670157145,
+      "nearest_kept": "a yellow head and throat",
+      "corr_with_nearest_kept": 0.866560549863443
+    },
+    {
+      "concept": "a yellow body",
+      "relevance": 0.8204572424660611,
+      "nearest_kept": "yellow feet",
+      "corr_with_nearest_kept": 0.8913487941676403
+    },
+    {
+      "concept": "a yellow body with black wings",
+      "relevance": 0.8078169300785001,
+      "nearest_kept": "a yellow head and throat",
+      "corr_with_nearest_kept": 0.8074704315206813
+    },
+    {
+      "concept": "a yellow cap on the head",
+      "relevance": 0.7844129771726719,
+      "nearest_kept": "a yellow head and throat",
+      "corr_with_nearest_kept": 0.8815586861160495
+    },
+    {
+      "concept": "a yellow crown",
+      "relevance": 0.8007101344410859,
+      "nearest_kept": "a yellow head and throat",
+      "corr_with_nearest_kept": 0.8739807155444635
+    },
+    {
+      "concept": "a yellow eye",
+      "relevance": 0.758300130237541,
+      "nearest_kept": "a yellowish bill",
+      "corr_with_nearest_kept": 0.8242198043956294
+    },
+    {
+      "concept": "a yellow head",
+      "relevance": 0.8071983648109777,
+      "nearest_kept": "a yellow head and throat",
+      "corr_with_nearest_kept": 0.9162183339902493
+    },
+    {
+      "concept": "a yellow-tipped tail",
+      "relevance": 0.7746126958819624,
+      "nearest_kept": "a yellowish bill",
+      "corr_with_nearest_kept": 0.8358436466073836
+    },
+    {
+      "concept": "a yellowish belly",
+      "relevance": 0.7688391482417449,
+      "nearest_kept": "a yellowish breast",
+      "corr_with_nearest_kept": 0.9070645726096458
+    },
+    {
+      "concept": "all black coloration",
+      "relevance": 0.7124181394471809,
+      "nearest_kept": "black feathers",
+      "corr_with_nearest_kept": 0.807697934115901
+    },
+    {
+      "concept": "black and orange plumage",
+      "relevance": 0.7021331792291863,
+      "nearest_kept": "orange and black wings",
+      "corr_with_nearest_kept": 0.856108421743185
+    },
+    {
+      "concept": "black and white plumage",
+      "relevance": 0.7138950331099784,
+      "nearest_kept": "a black and white color scheme",
+      "corr_with_nearest_kept": 0.8500823312489025
+    },
+    {
+      "concept": "black wings with orange bars",
+      "relevance": 0.6618416813114372,
+      "nearest_kept": "orange and black wings",
+      "corr_with_nearest_kept": 0.8860053849225139
+    },
+    {
+      "concept": "black wings with white bars",
+      "relevance": 0.6080713209693647,
+      "nearest_kept": "black wings with white spots",
+      "corr_with_nearest_kept": 0.8288485366612205
+    },
+    {
+      "concept": "blue plumage",
+      "relevance": 0.7341507511221759,
+      "nearest_kept": "a blue head",
+      "corr_with_nearest_kept": 0.849701583888698
+    },
+    {
+      "concept": "blue wings",
+      "relevance": 0.7137918056303578,
+      "nearest_kept": "A blue sheen on the wings",
+      "corr_with_nearest_kept": 0.850890986178022
+    },
+    {
+      "concept": "bright golden-yellow plumage",
+      "relevance": 0.845856574768548,
+      "nearest_kept": "a yellow head and throat",
+      "corr_with_nearest_kept": 0.8629053334156884
+    },
+    {
+      "concept": "gray wings",
+      "relevance": 0.6657124122011542,
+      "nearest_kept": "grayish wings and tail",
+      "corr_with_nearest_kept": 0.8342844928456999
+    },
+    {
+      "concept": "green plumage",
+      "relevance": 0.6767803111564751,
+      "nearest_kept": "green wings",
+      "corr_with_nearest_kept": 0.8694563677808089
+    },
+    {
+      "concept": "greenish-yellow back and wings",
+      "relevance": 0.8109751526217683,
+      "nearest_kept": "a yellow throat and breast",
+      "corr_with_nearest_kept": 0.8018353200111709
+    },
+    {
+      "concept": "large black bird",
+      "relevance": 0.7209754081226551,
+      "nearest_kept": "black feathers",
+      "corr_with_nearest_kept": 0.8045651651289997
+    },
+    {
+      "concept": "large feet",
+      "relevance": 0.44116334830929044,
+      "nearest_kept": "three toes on each foot",
+      "corr_with_nearest_kept": 0.865623534808928
+    },
+    {
+      "concept": "long wingspan",
+      "relevance": 0.459699335723511,
+      "nearest_kept": "long, powerful wings",
+      "corr_with_nearest_kept": 0.8482189486933556
+    },
+    {
+      "concept": "long, black wings",
+      "relevance": 0.7521279059550829,
+      "nearest_kept": "Glossy black wings",
+      "corr_with_nearest_kept": 0.8787678985957669
+    },
+    {
+      "concept": "long, thin legs",
+      "relevance": 0.4543033909038655,
+      "nearest_kept": "a long, thin body",
+      "corr_with_nearest_kept": 0.8026000596243394
+    },
+    {
+      "concept": "loud, rasping voice",
+      "relevance": 0.29429347030783826,
+      "nearest_kept": "a loud, high-pitched song",
+      "corr_with_nearest_kept": 0.8869576374932309
+    },
+    {
+      "concept": "olive-colored sides",
+      "relevance": 0.6821195865830183,
+      "nearest_kept": "olive-green back",
+      "corr_with_nearest_kept": 0.8595805526479419
+    },
+    {
+      "concept": "orange feet",
+      "relevance": 0.5979235384514048,
+      "nearest_kept": "orange legs",
+      "corr_with_nearest_kept": 0.919855523752707
+    },
+    {
+      "concept": "pale gray or white color",
+      "relevance": 0.6346352596164085,
+      "nearest_kept": "grayish-white underparts",
+      "corr_with_nearest_kept": 0.8264082368657318
+    },
+    {
+      "concept": "red shoulders",
+      "relevance": 0.6630988721580328,
+      "nearest_kept": "a red belly",
+      "corr_with_nearest_kept": 0.8159093493597518
+    },
+    {
+      "concept": "rufous (red-brown) color",
+      "relevance": 0.699700741137598,
+      "nearest_kept": "a rusty-red throat and breast",
+      "corr_with_nearest_kept": 0.8398237836289756
+    },
+    {
+      "concept": "rusty-brown feathers",
+      "relevance": 0.6745931881493159,
+      "nearest_kept": "a rusty brown color",
+      "corr_with_nearest_kept": 0.8583792853404497
+    },
+    {
+      "concept": "white and black coloration",
+      "relevance": 0.6663164461733656,
+      "nearest_kept": "a black and white color scheme",
+      "corr_with_nearest_kept": 0.910405628667976
+    },
+    {
+      "concept": "white body",
+      "relevance": 0.7008549509847974,
+      "nearest_kept": "a slender, white body",
+      "corr_with_nearest_kept": 0.8981981144855539
+    },
+    {
+      "concept": "white plumage",
+      "relevance": 0.7341882575525961,
+      "nearest_kept": "a slender, white body",
+      "corr_with_nearest_kept": 0.8635815366218245
+    },
+    {
+      "concept": "yellow bill",
+      "relevance": 0.7865981547161915,
+      "nearest_kept": "a yellowish bill",
+      "corr_with_nearest_kept": 0.8910049013917187
+    },
+    {
+      "concept": "yellow tips on the wings",
+      "relevance": 0.7071454100635074,
+      "nearest_kept": "yellow bar on wing",
+      "corr_with_nearest_kept": 0.8792143545924396
+    },
+    {
+      "concept": "yellow wings",
+      "relevance": 0.7531875305643805,
+      "nearest_kept": "yellow feet",
+      "corr_with_nearest_kept": 0.8388076565396899
+    },
+    {
+      "concept": "yellow wings with black bars",
+      "relevance": 0.7527281817019312,
+      "nearest_kept": "yellow bar on wing",
+      "corr_with_nearest_kept": 0.8456140888984677
+    },
+    {
+      "concept": "yellowish legs",
+      "relevance": 0.7392092304260474,
+      "nearest_kept": "yellow feet",
+      "corr_with_nearest_kept": 0.8872343121677008
+    },
+    {
+      "concept": "yellowish sides and flanks",
+      "relevance": 0.8014165509536348,
+      "nearest_kept": "a yellowish breast",
+      "corr_with_nearest_kept": 0.827406339690608
+    },
+    {
+      "concept": "yellowish underparts",
+      "relevance": 0.7509984270074969,
+      "nearest_kept": "a yellowish breast",
+      "corr_with_nearest_kept": 0.8459216203442068
+    },
+    {
+      "concept": "yellowish upperparts",
+      "relevance": 0.8011514062102612,
+      "nearest_kept": "a yellow throat and breast",
+      "corr_with_nearest_kept": 0.8013459301767385
+    }
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "summary": {
+    "n_concepts": 825,
+    "relevance_mean": 0.48060946579246167,
+    "relevance_median": 0.4801108148734405,
+    "redundancy_mean_abs_corr": 0.16671813040813085,
+    "redundancy_nn_abs_corr": 0.703925228801147,
+    "frac_concepts_with_dup_act": 0.2412121212121212,
+    "redundancy_mean_text_cos": 0.7504693269729614,
+    "redundancy_nn_text_cos": 0.892768520008434,
+    "frac_concepts_with_dup_text": 0.45575757575757575,
+    "nnz": 2793,
+    "NEC": 27.93,
+    "frac_concepts_unused": 0.11393939393939394,
+    "acc_val": 0.6504999995231628,
+    "n_classes": 100,
+    "seed": 1,
+    "dataset": "cifar100",
+    "filter_mode": "all",
+    "keep_frac": 1.0,
+    "n_before_filter": 857,
+    "n_after_filter": 857,
+    "w_rel": 1.0,
+    "w_red": 1.0,
+    "agg": "max",
+    "method": "baseline",
+    "tag": "_baseline_k100_s1",
+    "runtime_s": 298.1465790271759,
+    "model_dir": "saved_models\\cifar100_cbm_2026_11_02_10_26_42_baseline_k100_s1"
+  },
+  "removed_by_filter": []
+}

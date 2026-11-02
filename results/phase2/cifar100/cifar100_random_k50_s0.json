@@ -1,0 +1,2607 @@
+{
+  "summary": {
+    "n_concepts": 413,
+    "relevance_mean": 0.4751619624128558,
+    "relevance_median": 0.47667979906099395,
+    "redundancy_mean_abs_corr": 0.16139731976557078,
+    "redundancy_nn_abs_corr": 0.6593461222799512,
+    "frac_concepts_with_dup_act": 0.1549636803874092,
+    "redundancy_mean_text_cos": 0.7501296401023865,
+    "redundancy_nn_text_cos": 0.8807276161184611,
+    "frac_concepts_with_dup_text": 0.3196125907990315,
+    "nnz": 2802,
+    "NEC": 28.02,
+    "frac_concepts_unused": 0.012106537530266344,
+    "acc_val": 0.6348999738693237,
+    "n_classes": 100,
+    "seed": 0,
+    "dataset": "cifar100",
+    "filter_mode": "random",
+    "keep_frac": 0.5,
+    "n_before_filter": 857,
+    "n_after_filter": 428,
+    "w_rel": 1.0,
+    "w_red": 1.0,
+    "agg": "max",
+    "method": "random",
+    "tag": "_random_k50_s0",
+    "runtime_s": 229.00634145736694,
+    "model_dir": "saved_models\\cifar100_cbm_2026_11_02_10_05_52_random_k50_s0"
+  },
+  "removed_by_filter": [
+    {
+      "concept": "Food",
+      "relevance": 0.5118188663406961,
+      "nearest_kept": "a food dish",
+      "corr_with_nearest_kept": 0.7707295622074408
+    },
+    {
+      "concept": "a Christmas tree",
+      "relevance": 0.5637805158839505,
+      "nearest_kept": "a tree",
+      "corr_with_nearest_kept": 0.8317698672162005
+    },
+    {
+      "concept": "a alarm clock",
+      "relevance": 0.4582191225227248,
+      "nearest_kept": "leaves",
+      "corr_with_nearest_kept": 0.4214388391001294
+    },
+    {
+      "concept": "a backpack",
+      "relevance": 0.29488195201317174,
+      "nearest_kept": "a purse",
+      "corr_with_nearest_kept": 0.5506463351464336
+    },
+    {
+      "concept": "a ball",
+      "relevance": 0.37840771360710035,
+      "nearest_kept": "a baseball",
+      "corr_with_nearest_kept": 0.6827972651833905
+    },
+    {
+      "concept": "a bar",
+      "relevance": 0.5324982395204785,
+      "nearest_kept": "a kitchen",
+      "corr_with_nearest_kept": 0.6378107624916401
+    },
+    {
+      "concept": "a base unit with a speaker",
+      "relevance": 0.6036633804355175,
+      "nearest_kept": "a television stand",
+      "corr_with_nearest_kept": 0.7602624886439369
+    },
+    {
+      "concept": "a basketball",
+      "relevance": 0.3455344347154202,
+      "nearest_kept": "a baseball",
+      "corr_with_nearest_kept": 0.7508599109517928
+    },
+    {
+      "concept": "a bat",
+      "relevance": 0.4741168213561856,
+      "nearest_kept": "a bird",
+      "corr_with_nearest_kept": 0.6237853674798514
+    },
+    {
+      "concept": "a beach",
+      "relevance": 0.45941242797642257,
+      "nearest_kept": "a lake",
+      "corr_with_nearest_kept": 0.6664856995241398
+    },
+    {
+      "concept": "a beard (in some cases)",
+      "relevance": 0.25319278388025096,
+      "nearest_kept": "facial hair",
+      "corr_with_nearest_kept": 0.5009492909541691
+    },
+    {
+      "concept": "a bed frame",
+      "relevance": 0.6326272101292717,
+      "nearest_kept": "a footboard",
+      "corr_with_nearest_kept": 0.8019414260179887
+    },
+    {
+      "concept": "a bib",
+      "relevance": 0.4639086721054031,
+      "nearest_kept": "a napkin",
+      "corr_with_nearest_kept": 0.5553181313472002
+    },
+    {
+      "concept": "a bicycle seat",
+      "relevance": 0.4681355628632431,
+      "nearest_kept": "a pedal",
+      "corr_with_nearest_kept": 0.5258437385268978
+    },
+    {
+      "concept": "a bicyclist",
+      "relevance": 0.5482756768348489,
+      "nearest_kept": "a mountain bike",
+      "corr_with_nearest_kept": 0.5780967463225616
+    },
+    {
+      "concept": "a big, powerful jaw",
+      "relevance": 0.5283823109407614,
+      "nearest_kept": "sharp front teeth",
+      "corr_with_nearest_kept": 0.7401091969076264
+    },
+    {
+      "concept": "a bike lane",
+      "relevance": 0.6420809955378339,
+      "nearest_kept": "a street",
+      "corr_with_nearest_kept": 0.6891604331109124
+    },
+    {
+      "concept": "a black and white color scheme",
+      "relevance": 0.3054054222202293,
+      "nearest_kept": "a QWERTY layout",
+      "corr_with_nearest_kept": 0.504718705368438
+    },
+    {
+      "concept": "a blanket",
+      "relevance": 0.3552263903964025,
+      "nearest_kept": "a towel",
+      "corr_with_nearest_kept": 0.626462183807689
+    },
+    {
+      "concept": "a blowhole",
+      "relevance": 0.6072206832504451,
+      "nearest_kept": "a dorsal fin",
+      "corr_with_nearest_kept": 0.7325774373605958
+    },
+    {
+      "concept": "a boat",
+      "relevance": 0.5145579700335865,
+      "nearest_kept": "a dock",
+      "corr_with_nearest_kept": 0.626700745905671
+    },
+    {
+      "concept": "a body of water",
+      "relevance": 0.5873520553581116,
+      "nearest_kept": "a lake",
+      "corr_with_nearest_kept": 0.856408043255465
+    },
+    {
+      "concept": "a bottom-dwelling lifestyle",
+      "relevance": 0.3796361825533645,
+      "nearest_kept": "a thief",
+      "corr_with_nearest_kept": 0.5086410107155112
+    },
+    {
+      "concept": "a bright, red color",
+      "relevance": 0.3996231708229173,
+      "nearest_kept": "a red or orange color",
+      "corr_with_nearest_kept": 0.8098331699091273
+    },
+    {
+      "concept": "a bucket",
+      "relevance": 0.39754603103767294,
+      "nearest_kept": "a trash can",
+      "corr_with_nearest_kept": 0.7254408849877755
+    },
+    {
+      "concept": "a bulbous shape",
+      "relevance": 0.45034857947567086,
+      "nearest_kept": "a large, rounded bottom",
+      "corr_with_nearest_kept": 0.6026779091768194
+    },
+    {
+      "concept": "a bull",
+      "relevance": 0.5696047248621813,
+      "nearest_kept": "a cow",
+      "corr_with_nearest_kept": 0.8074998316333196
+    },
+    {
+      "concept": "a burrow",
+      "relevance": 0.48533672412400447,
+      "nearest_kept": "rodent",
+      "corr_with_nearest_kept": 0.49815705775261143
+    },
+    {
+      "concept": "a bus driver",
+      "relevance": 0.5882168581976315,
+      "nearest_kept": "a bus fare",
+      "corr_with_nearest_kept": 0.731156664631769
+    },
+    {
+      "concept": "a bus lane",
+      "relevance": 0.6110203031342216,
+      "nearest_kept": "a bus stop",
+      "corr_with_nearest_kept": 0.7111128265705539
+    },
+    {
+      "concept": "a bus schedule",
+      "relevance": 0.5971546107470588,
+      "nearest_kept": "a bus pass",
+      "corr_with_nearest_kept": 0.8000995853129675
+    },
+    {
+      "concept": "a bus sign",
+      "relevance": 0.5524990393457546,
+      "nearest_kept": "a bus pass",
+      "corr_with_nearest_kept": 0.7994950907734858
+    },
+    {
+      "concept": "a bush",
+      "relevance": 0.5205682518119336,
+      "nearest_kept": "a tree",
+      "corr_with_nearest_kept": 0.6748776390001897
+    },
+    {
+      "concept": "a cage",
+      "relevance": 0.39702167295991175,
+      "nearest_kept": "a crib",
+      "corr_with_nearest_kept": 0.5029647495154214
+    },
+    {
+      "concept": "a calf",
+      "relevance": 0.6309282288588102,
+      "nearest_kept": "a cow",
+      "corr_with_nearest_kept": 0.8267527370728867
+    },
+    {
+      "concept": "a can of Raid",
+      "relevance": 0.5054599086878853,
+      "nearest_kept": "a jar",
+      "corr_with_nearest_kept": 0.5798882890506608
+    },
+    {
+      "concept": "a can opener",
+      "relevance": 0.4243359913200504,
+      "nearest_kept": "a bottle opener",
+      "corr_with_nearest_kept": 0.6686423937372141
+    },
+    {
+      "concept": "a child",
+      "relevance": 0.6164554388678547,
+      "nearest_kept": "a thief",
+      "corr_with_nearest_kept": 0.6470743870827208
+    },
+    {
+      "concept": "a city",
+      "relevance": 0.5500076138127439,
+      "nearest_kept": "streets",
+      "corr_with_nearest_kept": 0.7387368971319878
+    },
+    {
+      "concept": "a coaster",
+      "relevance": 0.4602810082365484,
+      "nearest_kept": "usually has a lid or cover",
+      "corr_with_nearest_kept": 0.5337337876471335
+    },
+    {
+      "concept": "a coat of sharp quills",
+      "relevance": 0.523769539919621,
+      "nearest_kept": "a spiky coat",
+      "corr_with_nearest_kept": 0.6373006687188694
+    },
+    {
+      "concept": "a cocoon",
+      "relevance": 0.5219483105219512,
+      "nearest_kept": "a ladybug",
+      "corr_with_nearest_kept": 0.5987651447037484
+    },
+    {
+      "concept": "a coffee cup",
+      "relevance": 0.5123716595581417,
+      "nearest_kept": "a saucer",
+      "corr_with_nearest_kept": 0.5688134284389912
+    },
+    {
+      "concept": "a coffee table",
+      "relevance": 0.5574266066771557,
+      "nearest_kept": "a desk",
+      "corr_with_nearest_kept": 0.761456181299014
+    },
+    {
+      "concept": "a compact",
+      "relevance": 0.43933332901575456,
+      "nearest_kept": "usually has a lid or cover",
+      "corr_with_nearest_kept": 0.6062726132854016
+    },
+    {
+      "concept": "a computer",
+      "relevance": 0.5474817620277039,
+      "nearest_kept": "a keypad on one side",
+      "corr_with_nearest_kept": 0.625056399492239
+    },
+    {
+      "concept": "a computer screen",
+      "relevance": 0.5172696980823487,
+      "nearest_kept": "a large, rectangular screen",
+      "corr_with_nearest_kept": 0.712467930185878
+    },
+    {
+      "concept": "a conductor",
+      "relevance": 0.37571993985472807,
+      "nearest_kept": "a tall, upright posture",
+      "corr_with_nearest_kept": 0.4048876758111433
+    },
+    {
+      "concept": "a cord or wireless connection",
+      "relevance": 0.44216633466495797,
+      "nearest_kept": "a cord",
+      "corr_with_nearest_kept": 0.6023173148075186
+    },
+    {
+      "concept": "a countdown",
+      "relevance": 0.40903584024188666,
+      "nearest_kept": "time",
+      "corr_with_nearest_kept": 0.7708421605387026
+    },
+    {
+      "concept": "a country",
+      "relevance": 0.4278013072066557,
+      "nearest_kept": "a farm",
+      "corr_with_nearest_kept": 0.5939021256126406
+    },
+    {
+      "concept": "a crabbing net",
+      "relevance": 0.46943879913678727,
+      "nearest_kept": "a crabbing line",
+      "corr_with_nearest_kept": 0.7197979703943467
+    },
+    {
+      "concept": "a crabbing trap",
+      "relevance": 0.4714812762743805,
+      "nearest_kept": "a crabbing line",
+      "corr_with_nearest_kept": 0.7344030238140538
+    },
+    {
+      "concept": "a crosswalk",
+      "relevance": 0.45794518098855297,
+      "nearest_kept": "a street",
+      "corr_with_nearest_kept": 0.6475483630295377
+    },
+    {
+      "concept": "a crown of leaves at the top",
+      "relevance": 0.5397588066635866,
+      "nearest_kept": "leaves at the top of the tree",
+      "corr_with_nearest_kept": 0.8412873850644452
+    },
+    {
+      "concept": "a cub",
+      "relevance": 0.63732014338484,
+      "nearest_kept": "a cat",
+      "corr_with_nearest_kept": 0.6992625323610698
+    },
+    {
+      "concept": "a cupboard",
+      "relevance": 0.618438651170488,
+      "nearest_kept": "a kitchen",
+      "corr_with_nearest_kept": 0.6922499729923617
+    },
+    {
+      "concept": "a curb",
+      "relevance": 0.3973268140528695,
+      "nearest_kept": "a sidewalk",
+      "corr_with_nearest_kept": 0.6852439372736742
+    },
+    {
+      "concept": "a dam",
+      "relevance": 0.432817360082731,
+      "nearest_kept": "water",
+      "corr_with_nearest_kept": 0.48192030079498666
+    },
+    {
+      "concept": "a deep body",
+      "relevance": 0.36998950948981113,
+      "nearest_kept": "aquatic animal",
+      "corr_with_nearest_kept": 0.453505402194712
+    },
+    {
+      "concept": "a deep voice",
+      "relevance": 0.3785747802980651,
+      "nearest_kept": "atmosphere",
+      "corr_with_nearest_kept": 0.5278112546460133
+    },
+    {
+      "concept": "a deep, dark color",
+      "relevance": 0.28162142639162413,
+      "nearest_kept": "a black center",
+      "corr_with_nearest_kept": 0.5134692267395005
+    },
+    {
+      "concept": "a delicate, colorful flower",
+      "relevance": 0.7025497307669283,
+      "nearest_kept": "flowers",
+      "corr_with_nearest_kept": 0.8252312631647217
+    },
+    {
+      "concept": "a desert animal",
+      "relevance": 0.5811019308776169,
+      "nearest_kept": "a animal",
+      "corr_with_nearest_kept": 0.7171746426120349
+    },
+    {
+      "concept": "a diaper",
+      "relevance": 0.37121192502690314,
+      "nearest_kept": "a napkin",
+      "corr_with_nearest_kept": 0.5386655785849367
+    },
+    {
+      "concept": "a dirty floor",
+      "relevance": 0.30241360263842315,
+      "nearest_kept": "dirt",
+      "corr_with_nearest_kept": 0.3883480760752672
+    },
+    {
+      "concept": "a dirty kitchen",
+      "relevance": 0.33413268338584096,
+      "nearest_kept": "a kitchen",
+      "corr_with_nearest_kept": 0.7339748469715905
+    },
+    {
+      "concept": "a diving suit",
+      "relevance": 0.41472235546427433,
+      "nearest_kept": "a large, predatory fish",
+      "corr_with_nearest_kept": 0.514375172140418
+    },
+    {
+      "concept": "a door or doors on the front",
+      "relevance": 0.6064964975818468,
+      "nearest_kept": "windows and doors",
+      "corr_with_nearest_kept": 0.7989337621531974
+    },
+    {
+      "concept": "a drawbridge",
+      "relevance": 0.527604214537585,
+      "nearest_kept": "a gate",
+      "corr_with_nearest_kept": 0.6679076432681637
+    },
+    {
+      "concept": "a dress",
+      "relevance": 0.3591512044419572,
+      "nearest_kept": "a handlebar",
+      "corr_with_nearest_kept": 0.4118208151296422
+    },
+    {
+      "concept": "a drill",
+      "relevance": 0.43239828833975846,
+      "nearest_kept": "a spray",
+      "corr_with_nearest_kept": 0.5087743479909163
+    },
+    {
+      "concept": "a drink",
+      "relevance": 0.5498687548781032,
+      "nearest_kept": "tea",
+      "corr_with_nearest_kept": 0.5616363762443896
+    },
+    {
+      "concept": "a farmer",
+      "relevance": 0.485817079390994,
+      "nearest_kept": "a farm",
+      "corr_with_nearest_kept": 0.6450906561471614
+    },
+    {
+      "concept": "a field",
+      "relevance": 0.5849506207448714,
+      "nearest_kept": "a pasture",
+      "corr_with_nearest_kept": 0.8238355063435701
+    },
+    {
+      "concept": "a fin on the back",
+      "relevance": 0.5739531968456326,
+      "nearest_kept": "a dorsal fin",
+      "corr_with_nearest_kept": 0.8743058082820473
+    },
+    {
+      "concept": "a fish",
+      "relevance": 0.6775580711849588,
+      "nearest_kept": "a large, predatory fish",
+      "corr_with_nearest_kept": 0.8286843680036121
+    },
+    {
+      "concept": "a flag",
+      "relevance": 0.3861538382638302,
+      "nearest_kept": "sky",
+      "corr_with_nearest_kept": 0.38531256811792663
+    },
+    {
+      "concept": "a floor",
+      "relevance": 0.3351588774253339,
+      "nearest_kept": "a room",
+      "corr_with_nearest_kept": 0.48698499242274773
+    },
+    {
+      "concept": "a flower",
+      "relevance": 0.7171837487244105,
+      "nearest_kept": "flowers",
+      "corr_with_nearest_kept": 0.8650157786184147
+    },
+    {
+      "concept": "a flower pot",
+      "relevance": 0.6336947371575339,
+      "nearest_kept": "a vase",
+      "corr_with_nearest_kept": 0.7306835837446751
+    },
+    {
+      "concept": "a forked tongue",
+      "relevance": 0.4412165769284339,
+      "nearest_kept": "a forked tail",
+      "corr_with_nearest_kept": 0.6261757325868005
+    },
+    {
+      "concept": "a fresh, earthy smell",
+      "relevance": 0.3591297850185948,
+      "nearest_kept": "a smell",
+      "corr_with_nearest_kept": 0.537530356201801
+    },
+    {
+      "concept": "a fridge",
+      "relevance": 0.4395668517670538,
+      "nearest_kept": "a trash can",
+      "corr_with_nearest_kept": 0.5527900377823374
+    },
+    {
+      "concept": "a furry coat",
+      "relevance": 0.6419935411126659,
+      "nearest_kept": "fur covering the body",
+      "corr_with_nearest_kept": 0.8795322876667249
+    },
+    {
+      "concept": "a garden",
+      "relevance": 0.5613369075005485,
+      "nearest_kept": "green leaves",
+      "corr_with_nearest_kept": 0.7525421974435513
+    },
+    {
+      "concept": "a garden hose",
+      "relevance": 0.4004650924910587,
+      "nearest_kept": "a sprinkler",
+      "corr_with_nearest_kept": 0.5296665825639811
+    },
+    {
+      "concept": "a generally tulip-shaped form",
+      "relevance": 0.597516951827003,
+      "nearest_kept": "a rounded crown of leaves",
+      "corr_with_nearest_kept": 0.6546618814040868
+    },
+    {
+      "concept": "a glove",
+      "relevance": 0.27843990625863246,
+      "nearest_kept": "gloves",
+      "corr_with_nearest_kept": 0.6694057535166136
+    },
+    {
+      "concept": "a grassland",
+      "relevance": 0.5180861407866567,
+      "nearest_kept": "a pasture",
+      "corr_with_nearest_kept": 0.8734258932249224
+    },
+    {
+      "concept": "a green thumb",
+      "relevance": 0.49481752645422117,
+      "nearest_kept": "green leaves",
+      "corr_with_nearest_kept": 0.7424000501238721
+    },
+    {
+      "concept": "a greenhouse",
+      "relevance": 0.47461478397029677,
+      "nearest_kept": "green leaves",
+      "corr_with_nearest_kept": 0.5927859800398503
+    },
+    {
+      "concept": "a grocery store",
+      "relevance": 0.4486280143725322,
+      "nearest_kept": "a kitchen",
+      "corr_with_nearest_kept": 0.619194690649709
+    },
+    {
+      "concept": "a gun",
+      "relevance": 0.3115695100118561,
+      "nearest_kept": "a harpoon",
+      "corr_with_nearest_kept": 0.4525209674001187
+    },
+    {
+      "concept": "a hair brush",
+      "relevance": 0.39655324087802096,
+      "nearest_kept": "a spoon",
+      "corr_with_nearest_kept": 0.5521606421844272
+    },
+    {
+      "concept": "a handle",
+      "relevance": 0.49312042796327943,
+      "nearest_kept": "a handle for steering",
+      "corr_with_nearest_kept": 0.7866957009568663
+    },
+    {
+      "concept": "a hanger",
+      "relevance": 0.3754281268449789,
+      "nearest_kept": "hangers",
+      "corr_with_nearest_kept": 0.7070238190031283
+    },
+    {
+      "concept": "a hard, crustacean body",
+      "relevance": 0.5759753352620308,
+      "nearest_kept": "crustacean",
+      "corr_with_nearest_kept": 0.9476957463584053
+    },
+    {
+      "concept": "a hard, outer shell",
+      "relevance": 0.39737429359264226,
+      "nearest_kept": "a small, slimy body",
+      "corr_with_nearest_kept": 0.4726683099107345
+    },
+    {
+      "concept": "a hat",
+      "relevance": 0.33142374883188236,
+      "nearest_kept": "windows and doors",
+      "corr_with_nearest_kept": 0.4588543752172566
+    },
+    {
+      "concept": "a headboard",
+      "relevance": 0.6136782824081197,
+      "nearest_kept": "a footboard",
+      "corr_with_nearest_kept": 0.8039993929467604
+    },
+    {
+      "concept": "a helmet",
+      "relevance": 0.4065142418915807,
+      "nearest_kept": "a gas tank",
+      "corr_with_nearest_kept": 0.519942663783162
+    },
+    {
+      "concept": "a hitch for pulling trailers",
+      "relevance": 0.59483452406769,
+      "nearest_kept": "rail vehicle",
+      "corr_with_nearest_kept": 0.7313046342975297
+    },
+    {
+      "concept": "a hive tool",
+      "relevance": 0.5541644644669496,
+      "nearest_kept": "atmosphere",
+      "corr_with_nearest_kept": 0.5419963093541896
+    },
+    {
+      "concept": "a honeycomb",
+      "relevance": 0.41844362233123655,
+      "nearest_kept": "a hive",
+      "corr_with_nearest_kept": 0.6851562085020612
+    },
+    {
+      "concept": "a horizon",
+      "relevance": 0.6099715262464128,
+      "nearest_kept": "atmosphere",
+      "corr_with_nearest_kept": 0.7663385177461169
+    },
+    {
+      "concept": "a insect",
+      "relevance": 0.6652204737297727,
+      "nearest_kept": "a bug",
+      "corr_with_nearest_kept": 0.875124914563059
+    },
+    {
+      "concept": "a jungle",
+      "relevance": 0.4021197463814658,
+      "nearest_kept": "green leaves",
+      "corr_with_nearest_kept": 0.6407270171074724
+    },
+    {
+      "concept": "a keep",
+      "relevance": 0.5495251084337327,
+      "nearest_kept": "a home",
+      "corr_with_nearest_kept": 0.632252491810385
+    },
+    {
+      "concept": "a kit",
+      "relevance": 0.4233025193982401,
+      "nearest_kept": "usually has a lid or cover",
+      "corr_with_nearest_kept": 0.4866638216494163
+    },
+    {
+      "concept": "a knife",
+      "relevance": 0.29630555719901075,
+      "nearest_kept": "a fork",
+      "corr_with_nearest_kept": 0.7169694258174036
+    },
+    {
+      "concept": "a large number of trees",
+      "relevance": 0.6768158136907406,
+      "nearest_kept": "trees",
+      "corr_with_nearest_kept": 0.9334470337415083
+    },
+    {
+      "concept": "a large size",
+      "relevance": 0.16243778356861585,
+      "nearest_kept": "a large, rectangular body",
+      "corr_with_nearest_kept": 0.5619694419982812
+    },
+    {
+      "concept": "a large yellow center",
+      "relevance": 0.3534885406211597,
+      "nearest_kept": "a tawny or yellowish color",
+      "corr_with_nearest_kept": 0.4046934134508567
+    },
+    {
+      "concept": "a large, boxy shape",
+      "relevance": 0.40077165936935205,
+      "nearest_kept": "a large, rounded bottom",
+      "corr_with_nearest_kept": 0.6798423105763544
+    },
+    {
+      "concept": "a large, green body",
+      "relevance": 0.26890713592253995,
+      "nearest_kept": "a green, leafy base",
+      "corr_with_nearest_kept": 0.5778804698275105
+    },
+    {
+      "concept": "a large, imposing structure",
+      "relevance": 0.6261548774702395,
+      "nearest_kept": "large windows",
+      "corr_with_nearest_kept": 0.6783597387721348
+    },
+    {
+      "concept": "a large, ocean-dwelling mammal",
+      "relevance": 0.7086443689162506,
+      "nearest_kept": "aquatic animal",
+      "corr_with_nearest_kept": 0.8316592861586325
+    },
+    {
+      "concept": "a large, showy flower",
+      "relevance": 0.5846957449375996,
+      "nearest_kept": "flowers",
+      "corr_with_nearest_kept": 0.7571924369690896
+    },
+    {
+      "concept": "a large, yellow flower",
+      "relevance": 0.5312230791679426,
+      "nearest_kept": "flowers",
+      "corr_with_nearest_kept": 0.6778680395277898
+    },
+    {
+      "concept": "a leafy floor",
+      "relevance": 0.40957983313762636,
+      "nearest_kept": "leaves",
+      "corr_with_nearest_kept": 0.5811649492690989
+    },
+    {
+      "concept": "a lid",
+      "relevance": 0.5560600541973627,
+      "nearest_kept": "usually has a lid or cover",
+      "corr_with_nearest_kept": 0.7579002956060908
+    },
+    {
+      "concept": "a lid or opening at the top",
+      "relevance": 0.6522633585738886,
+      "nearest_kept": "a screw-top or corked top",
+      "corr_with_nearest_kept": 0.7694756835824177
+    },
+    {
+      "concept": "a light",
+      "relevance": 0.4528165926322274,
+      "nearest_kept": "a street light",
+      "corr_with_nearest_kept": 0.6305221539101957
+    },
+    {
+      "concept": "a light color",
+      "relevance": 0.44224904834534823,
+      "nearest_kept": "a light purple or white color",
+      "corr_with_nearest_kept": 0.6183181781456402
+    },
+    {
+      "concept": "a load of hay",
+      "relevance": 0.4636565330356871,
+      "nearest_kept": "hay",
+      "corr_with_nearest_kept": 0.6896581024730885
+    },
+    {
+      "concept": "a lock",
+      "relevance": 0.37531612378873214,
+      "nearest_kept": "a handle for steering",
+      "corr_with_nearest_kept": 0.4833492881800112
+    },
+    {
+      "concept": "a long hood",
+      "relevance": 0.3438875582865861,
+      "nearest_kept": "a small, narrow neck",
+      "corr_with_nearest_kept": 0.3994982741019605
+    },
+    {
+      "concept": "a long length",
+      "relevance": 0.3938289199387034,
+      "nearest_kept": "long and slender",
+      "corr_with_nearest_kept": 0.739897565899361
+    },
+    {
+      "concept": "a long mane around the head",
+      "relevance": 0.5139739445381276,
+      "nearest_kept": "longer hair than a man",
+      "corr_with_nearest_kept": 0.6335152185946458
+    },
+    {
+      "concept": "a long stem with thorns",
+      "relevance": 0.5134677208223564,
+      "nearest_kept": "long, thin leaves",
+      "corr_with_nearest_kept": 0.7325045893036112
+    },
+    {
+      "concept": "a long, curved nose",
+      "relevance": 0.368549648411001,
+      "nearest_kept": "small nose",
+      "corr_with_nearest_kept": 0.6604627010998604
+    },
+    {
+      "concept": "a long, slender trunk",
+      "relevance": 0.5137804941034739,
+      "nearest_kept": "a trunk with thick, rough bark",
+      "corr_with_nearest_kept": 0.5792587439715395
+    },
+    {
+      "concept": "a long, straight path",
+      "relevance": 0.6007924775147465,
+      "nearest_kept": "smooth, straight lines",
+      "corr_with_nearest_kept": 0.7188281336449119
+    },
+    {
+      "concept": "a long, tapered tail",
+      "relevance": 0.5017845451561105,
+      "nearest_kept": "a long, thick tail",
+      "corr_with_nearest_kept": 0.6697100532991085
+    },
+    {
+      "concept": "a long, thin abdomen",
+      "relevance": 0.44056108184920345,
+      "nearest_kept": "a long, thin antennae",
+      "corr_with_nearest_kept": 0.74567094703648
+    },
+    {
+      "concept": "a long, thin neck",
+      "relevance": 0.42288246782299477,
+      "nearest_kept": "a neck",
+      "corr_with_nearest_kept": 0.7194619027140174
+    },
+    {
+      "concept": "a long, thin shape",
+      "relevance": 0.31614003967147697,
+      "nearest_kept": "a large, elongated body",
+      "corr_with_nearest_kept": 0.7426778714303256
+    },
+    {
+      "concept": "a long, whip-like tail",
+      "relevance": 0.5752254412921193,
+      "nearest_kept": "long tail",
+      "corr_with_nearest_kept": 0.832846349517049
+    },
+    {
+      "concept": "a loud horn",
+      "relevance": 0.49319989343758946,
+      "nearest_kept": "wildlife",
+      "corr_with_nearest_kept": 0.5222976072483271
+    },
+    {
+      "concept": "a magnifying glass",
+      "relevance": 0.4817706046313003,
+      "nearest_kept": "a glass",
+      "corr_with_nearest_kept": 0.5175327768909687
+    },
+    {
+      "concept": "a male human child",
+      "relevance": 0.5740106858986342,
+      "nearest_kept": "has a short haircut",
+      "corr_with_nearest_kept": 0.6085984149067961
+    },
+    {
+      "concept": "a mane",
+      "relevance": 0.5507952715063128,
+      "nearest_kept": "a lioness",
+      "corr_with_nearest_kept": 0.7165609533922515
+    },
+    {
+      "concept": "a mattress",
+      "relevance": 0.46443661032035133,
+      "nearest_kept": "an open bed in the back",
+      "corr_with_nearest_kept": 0.6691068450495701
+    },
+    {
+      "concept": "a meadow",
+      "relevance": 0.5552552438503087,
+      "nearest_kept": "a pasture",
+      "corr_with_nearest_kept": 0.7944509392677866
+    },
+    {
+      "concept": "a meal",
+      "relevance": 0.46801116135074217,
+      "nearest_kept": "a food dish",
+      "corr_with_nearest_kept": 0.7166295397425475
+    },
+    {
+      "concept": "a metal or plastic body",
+      "relevance": 0.48255607949729634,
+      "nearest_kept": "a heavy, metal body",
+      "corr_with_nearest_kept": 0.6528954132091965
+    },
+    {
+      "concept": "a military vehicle",
+      "relevance": 0.7158503327307448,
+      "nearest_kept": "rail vehicle",
+      "corr_with_nearest_kept": 0.7908713654460139
+    },
+    {
+      "concept": "a monitor",
+      "relevance": 0.4839527232158956,
+      "nearest_kept": "a TV",
+      "corr_with_nearest_kept": 0.5878922581461685
+    },
+    {
+      "concept": "a motor",
+      "relevance": 0.5602939440891442,
+      "nearest_kept": "four wheels",
+      "corr_with_nearest_kept": 0.6034595824441051
+    },
+    {
+      "concept": "a mottled brown or black coat",
+      "relevance": 0.4300941806255551,
+      "nearest_kept": "long, brown fur",
+      "corr_with_nearest_kept": 0.7672055106819319
+    },
+    {
+      "concept": "a nature reserve",
+      "relevance": 0.525721171888329,
+      "nearest_kept": "habitat",
+      "corr_with_nearest_kept": 0.8171705770146755
+    },
+    {
+      "concept": "a nut",
+      "relevance": 0.45446466127129215,
+      "nearest_kept": "a peanut",
+      "corr_with_nearest_kept": 0.7728222214382965
+    },
+    {
+      "concept": "a office",
+      "relevance": 0.6170375743092438,
+      "nearest_kept": "a living room",
+      "corr_with_nearest_kept": 0.714568211000767
+    },
+    {
+      "concept": "a pacifier",
+      "relevance": 0.4069386748291197,
+      "nearest_kept": "a spoon",
+      "corr_with_nearest_kept": 0.45634011592695806
+    },
+    {
+      "concept": "a pack",
+      "relevance": 0.38302065563474513,
+      "nearest_kept": "a small leaf at the top",
+      "corr_with_nearest_kept": 0.488751851704992
+    },
+    {
+      "concept": "a pair of antennae",
+      "relevance": 0.4222348434568861,
+      "nearest_kept": "antennae",
+      "corr_with_nearest_kept": 0.9220579594425595
+    },
+    {
+      "concept": "a pair of shoes",
+      "relevance": 0.21318585238666826,
+      "nearest_kept": "shoes",
+      "corr_with_nearest_kept": 0.8321871583450936
+    },
+    {
+      "concept": "a pants",
+      "relevance": 0.34059822791055305,
+      "nearest_kept": "a suit",
+      "corr_with_nearest_kept": 0.5061733912574482
+    },
+    {
+      "concept": "a paper",
+      "relevance": 0.28300200612616405,
+      "nearest_kept": "a book",
+      "corr_with_nearest_kept": 0.46691988325198774
+    },
+    {
+      "concept": "a parking lot",
+      "relevance": 0.5665650120412292,
+      "nearest_kept": "a driveway",
+      "corr_with_nearest_kept": 0.7612545326531948
+    },
+    {
+      "concept": "a path",
+      "relevance": 0.533764005757875,
+      "nearest_kept": "a trail",
+      "corr_with_nearest_kept": 0.864510410193237
+    },
+    {
+      "concept": "a pedestrian",
+      "relevance": 0.38647736890455753,
+      "nearest_kept": "a sidewalk",
+      "corr_with_nearest_kept": 0.4615157193850597
+    },
+    {
+      "concept": "a peeler",
+      "relevance": 0.5661073215549651,
+      "nearest_kept": "a sweet, juicy flesh",
+      "corr_with_nearest_kept": 0.6129512387019398
+    },
+    {
+      "concept": "a petal",
+      "relevance": 0.653953622337667,
+      "nearest_kept": "flowers",
+      "corr_with_nearest_kept": 0.6523569795759301
+    },
+    {
+      "concept": "a phone",
+      "relevance": 0.5794402155710067,
+      "nearest_kept": "a keypad on one side",
+      "corr_with_nearest_kept": 0.6107377724904597
+    },
+    {
+      "concept": "a phone book",
+      "relevance": 0.43922497740511196,
+      "nearest_kept": "a number pad",
+      "corr_with_nearest_kept": 0.5944722146083309
+    },
+    {
+      "concept": "a pillow",
+      "relevance": 0.43752479124583515,
+      "nearest_kept": "a comforter",
+      "corr_with_nearest_kept": 0.5825633815644329
+    },
+    {
+      "concept": "a pin",
+      "relevance": 0.4145090756541007,
+      "nearest_kept": "atmosphere",
+      "corr_with_nearest_kept": 0.5439806768838603
+    },
+    {
+      "concept": "a plant",
+      "relevance": 0.6007005837145329,
+      "nearest_kept": "leaves",
+      "corr_with_nearest_kept": 0.7310416281116043
+    },
+    {
+      "concept": "a platform at one end",
+      "relevance": 0.5725553145564928,
+      "nearest_kept": "a bus shelter",
+      "corr_with_nearest_kept": 0.6579078278017704
+    },
+    {
+      "concept": "a playground",
+      "relevance": 0.4709647086652834,
+      "nearest_kept": "a courtyard",
+      "corr_with_nearest_kept": 0.6592668257371577
+    },
+    {
+      "concept": "a pointed or jagged peak",
+      "relevance": 0.47608680301283185,
+      "nearest_kept": "snow-capped peaks",
+      "corr_with_nearest_kept": 0.6508218838504812
+    },
+    {
+      "concept": "a pop-top or screw-top lid",
+      "relevance": 0.5695869308939688,
+      "nearest_kept": "a screw-top or corked top",
+      "corr_with_nearest_kept": 0.8001797035511715
+    },
+    {
+      "concept": "a pot",
+      "relevance": 0.4917456910756886,
+      "nearest_kept": "a vase",
+      "corr_with_nearest_kept": 0.6811722444320872
+    },
+    {
+      "concept": "a pouch on the female's belly",
+      "relevance": 0.7049768668760616,
+      "nearest_kept": "a animal",
+      "corr_with_nearest_kept": 0.710761458866808
+    },
+    {
+      "concept": "a predator",
+      "relevance": 0.547977010459137,
+      "nearest_kept": "a prey",
+      "corr_with_nearest_kept": 0.8198158778643577
+    },
+    {
+      "concept": "a raised edge",
+      "relevance": 0.4490993671974654,
+      "nearest_kept": "smooth, straight lines",
+      "corr_with_nearest_kept": 0.5887938543926363
+    },
+    {
+      "concept": "a rake",
+      "relevance": 0.3567596769160341,
+      "nearest_kept": "a cultivator",
+      "corr_with_nearest_kept": 0.599466955359811
+    },
+    {
+      "concept": "a recycling bin",
+      "relevance": 0.41690169624779183,
+      "nearest_kept": "a trash can",
+      "corr_with_nearest_kept": 0.7115034502490307
+    },
+    {
+      "concept": "a red or dark brown color",
+      "relevance": 0.2938889317410794,
+      "nearest_kept": "a red or orange color",
+      "corr_with_nearest_kept": 0.6134649950845321
+    },
+    {
+      "concept": "a red, green, or yellow color",
+      "relevance": 0.44493072848312903,
+      "nearest_kept": "a red or orange color",
+      "corr_with_nearest_kept": 0.678501856676626
+    },
+    {
+      "concept": "a reptilian appearance",
+      "relevance": 0.49564354242265446,
+      "nearest_kept": "reptilian skin",
+      "corr_with_nearest_kept": 0.8027667931744796
+    },
+    {
+      "concept": "a rider",
+      "relevance": 0.5503051872306601,
+      "nearest_kept": "two arms and two legs",
+      "corr_with_nearest_kept": 0.4938248570543433
+    },
+    {
+      "concept": "a river",
+      "relevance": 0.4640991405552206,
+      "nearest_kept": "a lake",
+      "corr_with_nearest_kept": 0.7982243895159228
+    },
+    {
+      "concept": "a roach trap",
+      "relevance": 0.5883457082613738,
+      "nearest_kept": "a roach motel",
+      "corr_with_nearest_kept": 0.7410000297053174
+    },
+    {
+      "concept": "a roar",
+      "relevance": 0.6382403157362462,
+      "nearest_kept": "a lioness",
+      "corr_with_nearest_kept": 0.7457057140562428
+    },
+    {
+      "concept": "a rock",
+      "relevance": 0.31352918775027927,
+      "nearest_kept": "rocks",
+      "corr_with_nearest_kept": 0.6927421309674883
+    },
+    {
+      "concept": "a rocket ship",
+      "relevance": 0.518051594697431,
+      "nearest_kept": "a space shuttle",
+      "corr_with_nearest_kept": 0.7741655500518314
+    },
+    {
+      "concept": "a rod",
+      "relevance": 0.3889667460366842,
+      "nearest_kept": "a harpoon",
+      "corr_with_nearest_kept": 0.6138384218934557
+    },
+    {
+      "concept": "a rugged, uneven surface",
+      "relevance": 0.4231334509760182,
+      "nearest_kept": "landform",
+      "corr_with_nearest_kept": 0.6333376851404426
+    },
+    {
+      "concept": "a saddle",
+      "relevance": 0.4080076706181444,
+      "nearest_kept": "a bridle",
+      "corr_with_nearest_kept": 0.537225267082338
+    },
+    {
+      "concept": "a sandy or brown coloration",
+      "relevance": 0.2695806423079679,
+      "nearest_kept": "a tawny or yellowish color",
+      "corr_with_nearest_kept": 0.5646275051485997
+    },
+    {
+      "concept": "a saw",
+      "relevance": 0.38543659738511515,
+      "nearest_kept": "a plow",
+      "corr_with_nearest_kept": 0.5019344331869412
+    },
+    {
+      "concept": "a scooter",
+      "relevance": 0.5668907253928307,
+      "nearest_kept": "a stroller",
+      "corr_with_nearest_kept": 0.6718770958495952
+    },
+    {
+      "concept": "a seat affixed to the frame",
+      "relevance": 0.6334073132905655,
+      "nearest_kept": "a seat",
+      "corr_with_nearest_kept": 0.7390287807441634
+    },
+    {
+      "concept": "a seat for the rider",
+      "relevance": 0.5566198963026783,
+      "nearest_kept": "legs to support the seat",
+      "corr_with_nearest_kept": 0.7106985487587132
+    },
+    {
+      "concept": "a set of function keys",
+      "relevance": 0.3817183573655006,
+      "nearest_kept": "a QWERTY layout",
+      "corr_with_nearest_kept": 0.7245620938246587
+    },
+    {
+      "concept": "a shell",
+      "relevance": 0.49872807790534207,
+      "nearest_kept": "a large, spiral shell",
+      "corr_with_nearest_kept": 0.8110827353064364
+    },
+    {
+      "concept": "a shirt",
+      "relevance": 0.3256037683807126,
+      "nearest_kept": "a napkin",
+      "corr_with_nearest_kept": 0.4887669827029491
+    },
+    {
+      "concept": "a short, stubby tail",
+      "relevance": 0.5944546159053424,
+      "nearest_kept": "a tail in the back",
+      "corr_with_nearest_kept": 0.8218512714419395
+    },
+    {
+      "concept": "a shovel",
+      "relevance": 0.4140815039584895,
+      "nearest_kept": "a plow",
+      "corr_with_nearest_kept": 0.5787117905295133
+    },
+    {
+      "concept": "a silo",
+      "relevance": 0.5372527545345233,
+      "nearest_kept": "a barn",
+      "corr_with_nearest_kept": 0.5511035718336387
+    },
+    {
+      "concept": "a skateboard",
+      "relevance": 0.29670441127090497,
+      "nearest_kept": "a pedal",
+      "corr_with_nearest_kept": 0.5157860394998766
+    },
+    {
+      "concept": "a sleek, gray body",
+      "relevance": 0.4261049072146651,
+      "nearest_kept": "a large, gray body",
+      "corr_with_nearest_kept": 0.6937482730964005
+    },
+    {
+      "concept": "a slender body",
+      "relevance": 0.26606135745973086,
+      "nearest_kept": "a slender or curvaceous figure",
+      "corr_with_nearest_kept": 0.7557289871478375
+    },
+    {
+      "concept": "a slime trail",
+      "relevance": 0.41272020706263335,
+      "nearest_kept": "slime",
+      "corr_with_nearest_kept": 0.5030092798469399
+    },
+    {
+      "concept": "a small mammal",
+      "relevance": 0.6544282149731585,
+      "nearest_kept": "rodent",
+      "corr_with_nearest_kept": 0.8795358830139433
+    },
+    {
+      "concept": "a small mouth",
+      "relevance": 0.5358858432873985,
+      "nearest_kept": "a large, predatory fish",
+      "corr_with_nearest_kept": 0.6178927785366722
+    },
+    {
+      "concept": "a small, agile body",
+      "relevance": 0.4536977715539718,
+      "nearest_kept": "two arms and two legs",
+      "corr_with_nearest_kept": 0.6069539737935672
+    },
+    {
+      "concept": "a small, delicate flower",
+      "relevance": 0.632590147828473,
+      "nearest_kept": "flowers",
+      "corr_with_nearest_kept": 0.5920207756848569
+    },
+    {
+      "concept": "a small, furry body",
+      "relevance": 0.657352005011002,
+      "nearest_kept": "a animal",
+      "corr_with_nearest_kept": 0.7860062892010534
+    },
+    {
+      "concept": "a small, plump body",
+      "relevance": 0.3958934905671329,
+      "nearest_kept": "a large, muscular body",
+      "corr_with_nearest_kept": 0.6938212679917807
+    },
+    {
+      "concept": "a small, pointed nose",
+      "relevance": 0.3041770309454071,
+      "nearest_kept": "a small, pointed face",
+      "corr_with_nearest_kept": 0.6638556667545967
+    },
+    {
+      "concept": "a small, rodent-like body",
+      "relevance": 0.5772078631849232,
+      "nearest_kept": "rodent",
+      "corr_with_nearest_kept": 0.868588744599025
+    },
+    {
+      "concept": "a small, round shape",
+      "relevance": 0.41264099215250877,
+      "nearest_kept": "a large, rounded bottom",
+      "corr_with_nearest_kept": 0.6122267657603029
+    },
+    {
+      "concept": "a smoker",
+      "relevance": 0.3250282176796309,
+      "nearest_kept": "natural feature",
+      "corr_with_nearest_kept": 0.342381757227346
+    },
+    {
+      "concept": "a snake charmer",
+      "relevance": 0.4926935407082527,
+      "nearest_kept": "a python",
+      "corr_with_nearest_kept": 0.5798048994703539
+    },
+    {
+      "concept": "a snout",
+      "relevance": 0.5811715529996127,
+      "nearest_kept": "a twitchy nose",
+      "corr_with_nearest_kept": 0.8077032299538015
+    },
+    {
+      "concept": "a soccer ball",
+      "relevance": 0.3039760615203716,
+      "nearest_kept": "a baseball",
+      "corr_with_nearest_kept": 0.6857005149647577
+    },
+    {
+      "concept": "a socket",
+      "relevance": 0.4410498045702253,
+      "nearest_kept": "a plug",
+      "corr_with_nearest_kept": 0.6453544680701429
+    },
+    {
+      "concept": "a sofa",
+      "relevance": 0.5855945151558417,
+      "nearest_kept": "a seat",
+      "corr_with_nearest_kept": 0.7777945032737369
+    },
+    {
+      "concept": "a soft surface",
+      "relevance": 0.355763773041345,
+      "nearest_kept": "a smooth surface",
+      "corr_with_nearest_kept": 0.6059830270909596
+    },
+    {
+      "concept": "a soft, round head",
+      "relevance": 0.4085955344145952,
+      "nearest_kept": "a small head",
+      "corr_with_nearest_kept": 0.7297097833613563
+    },
+    {
+      "concept": "a spaceship",
+      "relevance": 0.5179548938760119,
+      "nearest_kept": "a space shuttle",
+      "corr_with_nearest_kept": 0.7712410933184833
+    },
+    {
+      "concept": "a spade",
+      "relevance": 0.3489238847005742,
+      "nearest_kept": "a cultivator",
+      "corr_with_nearest_kept": 0.4343064320659059
+    },
+    {
+      "concept": "a spray bottle",
+      "relevance": 0.5126492115466232,
+      "nearest_kept": "a spray",
+      "corr_with_nearest_kept": 0.7697641433873454
+    },
+    {
+      "concept": "a stand",
+      "relevance": 0.4285631382530307,
+      "nearest_kept": "a desk",
+      "corr_with_nearest_kept": 0.5502402500182114
+    },
+    {
+      "concept": "a star",
+      "relevance": 0.3844348092029334,
+      "nearest_kept": "a sun",
+      "corr_with_nearest_kept": 0.6069018645615287
+    },
+    {
+      "concept": "a statue",
+      "relevance": 0.3077437722098622,
+      "nearest_kept": "a tall stature",
+      "corr_with_nearest_kept": 0.5031113979400433
+    },
+    {
+      "concept": "a stem protruding from the top",
+      "relevance": 0.5097590945142538,
+      "nearest_kept": "a stem",
+      "corr_with_nearest_kept": 0.7920193307797652
+    },
+    {
+      "concept": "a stocky body",
+      "relevance": 0.44148667952005755,
+      "nearest_kept": "a large, muscular body",
+      "corr_with_nearest_kept": 0.6739389844597462
+    },
+    {
+      "concept": "a stop sign",
+      "relevance": 0.4201728085327327,
+      "nearest_kept": "a traffic light",
+      "corr_with_nearest_kept": 0.5648887187734728
+    },
+    {
+      "concept": "a stream",
+      "relevance": 0.3654083627262225,
+      "nearest_kept": "a pond",
+      "corr_with_nearest_kept": 0.6207076666420877
+    },
+    {
+      "concept": "a streamlined body",
+      "relevance": 0.5030327374867238,
+      "nearest_kept": "a large, elongated body",
+      "corr_with_nearest_kept": 0.5219205964859442
+    },
+    {
+      "concept": "a structure that spans a gap",
+      "relevance": 0.5850903881620159,
+      "nearest_kept": "a gate",
+      "corr_with_nearest_kept": 0.6130269331692763
+    },
+    {
+      "concept": "a sunset",
+      "relevance": 0.4200676914890111,
+      "nearest_kept": "the sky",
+      "corr_with_nearest_kept": 0.7006611277708964
+    },
+    {
+      "concept": "a surfboard",
+      "relevance": 0.42136097533162953,
+      "nearest_kept": "a dorsal fin",
+      "corr_with_nearest_kept": 0.5151538154227473
+    },
+    {
+      "concept": "a sweet fragrance",
+      "relevance": 0.5328907052582447,
+      "nearest_kept": "a smell",
+      "corr_with_nearest_kept": 0.6822444081045298
+    },
+    {
+      "concept": "a swimmer",
+      "relevance": 0.5486953919645615,
+      "nearest_kept": "aquatic animal",
+      "corr_with_nearest_kept": 0.7860313924188173
+    },
+    {
+      "concept": "a tall, sturdy trunk",
+      "relevance": 0.5394018937690647,
+      "nearest_kept": "a trunk with thick, rough bark",
+      "corr_with_nearest_kept": 0.650191531490621
+    },
+    {
+      "concept": "a teardrop-shaped body",
+      "relevance": 0.409694840251826,
+      "nearest_kept": "a small, slimy body",
+      "corr_with_nearest_kept": 0.626789700132651
+    },
+    {
+      "concept": "a thin, papery texture",
+      "relevance": 0.36871270635554726,
+      "nearest_kept": "a crisp texture",
+      "corr_with_nearest_kept": 0.6942330653303417
+    },
+    {
+      "concept": "a thorn",
+      "relevance": 0.5195003263383028,
+      "nearest_kept": "thorns",
+      "corr_with_nearest_kept": 0.792846631377371
+    },
+    {
+      "concept": "a ticket",
+      "relevance": 0.31069729459028994,
+      "nearest_kept": "a bus pass",
+      "corr_with_nearest_kept": 0.5908028811840166
+    },
+    {
+      "concept": "a tire",
+      "relevance": 0.4028941579732336,
+      "nearest_kept": "a wheel",
+      "corr_with_nearest_kept": 0.6081691380738374
+    },
+    {
+      "concept": "a tow rope",
+      "relevance": 0.46927003954133156,
+      "nearest_kept": "a handle for steering",
+      "corr_with_nearest_kept": 0.5431396179606164
+    },
+    {
+      "concept": "a tower",
+      "relevance": 0.613494594678479,
+      "nearest_kept": "a chimney",
+      "corr_with_nearest_kept": 0.6980001965439684
+    },
+    {
+      "concept": "a towering height",
+      "relevance": 0.5923911549284476,
+      "nearest_kept": "a tall stature",
+      "corr_with_nearest_kept": 0.7897719349882465
+    },
+    {
+      "concept": "a toy",
+      "relevance": 0.469336991807199,
+      "nearest_kept": "wheels",
+      "corr_with_nearest_kept": 0.5556551592598392
+    },
+    {
+      "concept": "a track",
+      "relevance": 0.3609729692520315,
+      "nearest_kept": "a trail",
+      "corr_with_nearest_kept": 0.5821821829252961
+    },
+    {
+      "concept": "a tree stand",
+      "relevance": 0.553443047009591,
+      "nearest_kept": "trees",
+      "corr_with_nearest_kept": 0.5930102227625033
+    },
+    {
+      "concept": "a trunk",
+      "relevance": 0.4544771882571991,
+      "nearest_kept": "a trunk with thick, rough bark",
+      "corr_with_nearest_kept": 0.703807298886135
+    },
+    {
+      "concept": "a uniform",
+      "relevance": 0.354548965210731,
+      "nearest_kept": "a teacher",
+      "corr_with_nearest_kept": 0.4528654272619182
+    },
+    {
+      "concept": "a uniform color",
+      "relevance": 0.43042269490667207,
+      "nearest_kept": "a red or orange color",
+      "corr_with_nearest_kept": 0.48724642805217855
+    },
+    {
+      "concept": "a vehicle",
+      "relevance": 0.7641069396090336,
+      "nearest_kept": "four wheels",
+      "corr_with_nearest_kept": 0.8062610413380658
+    },
+    {
+      "concept": "a veil",
+      "relevance": 0.3727118284466543,
+      "nearest_kept": "large wheels",
+      "corr_with_nearest_kept": 0.4764452821618978
+    },
+    {
+      "concept": "a wall",
+      "relevance": 0.2882410014138508,
+      "nearest_kept": "a hole in the wall",
+      "corr_with_nearest_kept": 0.5288825958484229
+    },
+    {
+      "concept": "a water bottle",
+      "relevance": 0.43839392350834133,
+      "nearest_kept": "a bottle opener",
+      "corr_with_nearest_kept": 0.6053753331173175
+    },
+    {
+      "concept": "a watering can",
+      "relevance": 0.38941352589963607,
+      "nearest_kept": "garden equipment",
+      "corr_with_nearest_kept": 0.595358701066613
+    },
+    {
+      "concept": "a weeping or cascading form",
+      "relevance": 0.40755615472955026,
+      "nearest_kept": "wheels",
+      "corr_with_nearest_kept": 0.49738744497166665
+    },
+    {
+      "concept": "a wet suit",
+      "relevance": 0.4194361935092763,
+      "nearest_kept": "a bathing suit",
+      "corr_with_nearest_kept": 0.5163802916801019
+    },
+    {
+      "concept": "a white or brown color",
+      "relevance": 0.29328608248148774,
+      "nearest_kept": "a light purple or white color",
+      "corr_with_nearest_kept": 0.6305380007470812
+    },
+    {
+      "concept": "a wide, flat front",
+      "relevance": 0.46049461582306683,
+      "nearest_kept": "smooth, straight lines",
+      "corr_with_nearest_kept": 0.5374740748623762
+    },
+    {
+      "concept": "a window",
+      "relevance": 0.5401890507789848,
+      "nearest_kept": "large windows",
+      "corr_with_nearest_kept": 0.7220008432422241
+    },
+    {
+      "concept": "a worm bin",
+      "relevance": 0.43185093376190475,
+      "nearest_kept": "a compost bin",
+      "corr_with_nearest_kept": 0.6757305294261788
+    },
+    {
+      "concept": "a wormery",
+      "relevance": 0.4865521427006433,
+      "nearest_kept": "compost",
+      "corr_with_nearest_kept": 0.6780577587596327
+    },
+    {
+      "concept": "a wreath",
+      "relevance": 0.5076079309461726,
+      "nearest_kept": "a bouquet",
+      "corr_with_nearest_kept": 0.7017665373308354
+    },
+    {
+      "concept": "a yellow or gold color",
+      "relevance": 0.2758367103368967,
+      "nearest_kept": "a tawny or yellowish color",
+      "corr_with_nearest_kept": 0.5711528678115789
+    },
+    {
+      "concept": "a zoo",
+      "relevance": 0.6157645091682228,
+      "nearest_kept": "wildlife",
+      "corr_with_nearest_kept": 0.7167427951727406
+    },
+    {
+      "concept": "able to climb trees",
+      "relevance": 0.5686336296407428,
+      "nearest_kept": "shade from the trees",
+      "corr_with_nearest_kept": 0.6292268520015843
+    },
+    {
+      "concept": "acorns on the ground beneath",
+      "relevance": 0.4867957445774742,
+      "nearest_kept": "acorns",
+      "corr_with_nearest_kept": 0.8646851233487954
+    },
+    {
+      "concept": "adult",
+      "relevance": 0.5492118496017875,
+      "nearest_kept": "a large, spotted body",
+      "corr_with_nearest_kept": 0.6748278253060991
+    },
+    {
+      "concept": "amphibian",
+      "relevance": 0.5585016519844092,
+      "nearest_kept": "a small, slimy body",
+      "corr_with_nearest_kept": 0.6532336081558279
+    },
+    {
+      "concept": "an Outback",
+      "relevance": 0.43735393011539975,
+      "nearest_kept": "a safari",
+      "corr_with_nearest_kept": 0.6140120855902707
+    },
+    {
+      "concept": "an acorn",
+      "relevance": 0.4892996723431005,
+      "nearest_kept": "cone-shaped fruit",
+      "corr_with_nearest_kept": 0.6752296873734484
+    },
+    {
+      "concept": "an aquarium",
+      "relevance": 0.5800913700992809,
+      "nearest_kept": "a large, predatory fish",
+      "corr_with_nearest_kept": 0.6883729358182853
+    },
+    {
+      "concept": "an ocean",
+      "relevance": 0.6142345503435791,
+      "nearest_kept": "waves",
+      "corr_with_nearest_kept": 0.8350811914121237
+    },
+    {
+      "concept": "appliance",
+      "relevance": 0.486781634902276,
+      "nearest_kept": "device",
+      "corr_with_nearest_kept": 0.6504892632805952
+    },
+    {
+      "concept": "armrests on either side",
+      "relevance": 0.6544438668933705,
+      "nearest_kept": "a backrest",
+      "corr_with_nearest_kept": 0.7397242194466751
+    },
+    {
+      "concept": "baby possums",
+      "relevance": 0.532321863255655,
+      "nearest_kept": "rodent",
+      "corr_with_nearest_kept": 0.6142409300519089
+    },
+    {
+      "concept": "berries",
+      "relevance": 0.486348049503685,
+      "nearest_kept": "fruit",
+      "corr_with_nearest_kept": 0.6305875823327365
+    },
+    {
+      "concept": "birds",
+      "relevance": 0.22920400008050662,
+      "nearest_kept": "seagulls",
+      "corr_with_nearest_kept": 0.68093761287021
+    },
+    {
+      "concept": "black and white coloration",
+      "relevance": 0.20998139901547722,
+      "nearest_kept": "a fluffy, white appearance",
+      "corr_with_nearest_kept": 0.48853834956657183
+    },
+    {
+      "concept": "black and yellow stripes",
+      "relevance": 0.3052184273187248,
+      "nearest_kept": "a stripe",
+      "corr_with_nearest_kept": 0.44764287881605913
+    },
+    {
+      "concept": "black markings around the eyes",
+      "relevance": 0.5795420260539345,
+      "nearest_kept": "two small, beady eyes",
+      "corr_with_nearest_kept": 0.7973936436225428
+    },
+    {
+      "concept": "black spots on the coat",
+      "relevance": 0.4852356318978863,
+      "nearest_kept": "fur covering the body",
+      "corr_with_nearest_kept": 0.6191922545023227
+    },
+    {
+      "concept": "breasts",
+      "relevance": 0.35596028638646954,
+      "nearest_kept": "no breasts",
+      "corr_with_nearest_kept": 0.8711246838383903
+    },
+    {
+      "concept": "broad shoulders",
+      "relevance": 0.31660195669740543,
+      "nearest_kept": "a tall stature",
+      "corr_with_nearest_kept": 0.5057737179657122
+    },
+    {
+      "concept": "brown or reddish-brown bark",
+      "relevance": 0.3970157919322846,
+      "nearest_kept": "a trunk with thick, rough bark",
+      "corr_with_nearest_kept": 0.8080706929257344
+    },
+    {
+      "concept": "building",
+      "relevance": 0.6471587289923272,
+      "nearest_kept": "windows and doors",
+      "corr_with_nearest_kept": 0.7318068066260434
+    },
+    {
+      "concept": "bushes",
+      "relevance": 0.49740508187273064,
+      "nearest_kept": "trees",
+      "corr_with_nearest_kept": 0.7474729131769167
+    },
+    {
+      "concept": "cables",
+      "relevance": 0.44476232144661304,
+      "nearest_kept": "a control room",
+      "corr_with_nearest_kept": 0.5156223155669493
+    },
+    {
+      "concept": "can be a variety of colors",
+      "relevance": 0.36283114186200244,
+      "nearest_kept": "can change color",
+      "corr_with_nearest_kept": 0.5976182512883215
+    },
+    {
+      "concept": "carnivore",
+      "relevance": 0.6847496825833882,
+      "nearest_kept": "a animal",
+      "corr_with_nearest_kept": 0.7928931767178131
+    },
+    {
+      "concept": "cars",
+      "relevance": 0.6147689094064933,
+      "nearest_kept": "passenger cars",
+      "corr_with_nearest_kept": 0.7773717259986745
+    },
+    {
+      "concept": "chickens",
+      "relevance": 0.26541569653570735,
+      "nearest_kept": "a tall, rectangular shape",
+      "corr_with_nearest_kept": 0.43558641894014605
+    },
+    {
+      "concept": "coffee",
+      "relevance": 0.3728319775475737,
+      "nearest_kept": "tea",
+      "corr_with_nearest_kept": 0.5738697925383394
+    },
+    {
+      "concept": "cones",
+      "relevance": 0.45112088370209896,
+      "nearest_kept": "cone-shaped fruit",
+      "corr_with_nearest_kept": 0.5090371770960542
+    },
+    {
+      "concept": "container",
+      "relevance": 0.5214374070776313,
+      "nearest_kept": "man-made object",
+      "corr_with_nearest_kept": 0.5552564506358115
+    },
+    {
+      "concept": "controls for power and volume",
+      "relevance": 0.4260512643028501,
+      "nearest_kept": "a control room",
+      "corr_with_nearest_kept": 0.6389314631690985
+    },
+    {
+      "concept": "cubs",
+      "relevance": 0.4461709822522176,
+      "nearest_kept": "a pride of lions",
+      "corr_with_nearest_kept": 0.509939759909215
+    },
+    {
+      "concept": "dense vegetation",
+      "relevance": 0.4697272245216388,
+      "nearest_kept": "green leaves",
+      "corr_with_nearest_kept": 0.7646353686536278
+    },
+    {
+      "concept": "dish",
+      "relevance": 0.43618571290871533,
+      "nearest_kept": "a saucer",
+      "corr_with_nearest_kept": 0.5666686765691593
+    },
+    {
+      "concept": "earrings",
+      "relevance": 0.3579245361560391,
+      "nearest_kept": "a necklace",
+      "corr_with_nearest_kept": 0.6251652087243191
+    },
+    {
+      "concept": "ecosystem",
+      "relevance": 0.38275543250393335,
+      "nearest_kept": "biome",
+      "corr_with_nearest_kept": 0.7894258941190336
+    },
+    {
+      "concept": "eight legs",
+      "relevance": 0.5379650518818276,
+      "nearest_kept": "hairy or spiny legs",
+      "corr_with_nearest_kept": 0.723849461193054
+    },
+    {
+      "concept": "electronic device",
+      "relevance": 0.42996009238664484,
+      "nearest_kept": "communication device",
+      "corr_with_nearest_kept": 0.7918796258985925
+    },
+    {
+      "concept": "exhaust pipes",
+      "relevance": 0.49525765341784833,
+      "nearest_kept": "rail vehicle",
+      "corr_with_nearest_kept": 0.5683640527326267
+    },
+    {
+      "concept": "fins at the other end",
+      "relevance": 0.5648993869358317,
+      "nearest_kept": "a dorsal fin",
+      "corr_with_nearest_kept": 0.769603793825381
+    },
+    {
+      "concept": "flippers on the sides",
+      "relevance": 0.5087478095804999,
+      "nearest_kept": "a dorsal fin",
+      "corr_with_nearest_kept": 0.6654415437361255
+    },
+    {
+      "concept": "floating in the sky",
+      "relevance": 0.45325791527407117,
+      "nearest_kept": "the sky",
+      "corr_with_nearest_kept": 0.7201494587994671
+    },
+    {
+      "concept": "four legs",
+      "relevance": 0.6361338956513303,
+      "nearest_kept": "two arms and two legs",
+      "corr_with_nearest_kept": 0.8690597208917518
+    },
+    {
+      "concept": "front paws that resemble hands",
+      "relevance": 0.5942053972693182,
+      "nearest_kept": "a cat",
+      "corr_with_nearest_kept": 0.7216087993526659
+    },
+    {
+      "concept": "furniture",
+      "relevance": 0.7026504180450875,
+      "nearest_kept": "a desk",
+      "corr_with_nearest_kept": 0.8139999674243821
+    },
+    {
+      "concept": "gastropod",
+      "relevance": 0.5240557597861084,
+      "nearest_kept": "a large, spiral shell",
+      "corr_with_nearest_kept": 0.6368491130334776
+    },
+    {
+      "concept": "geographic feature",
+      "relevance": 0.34853914708286254,
+      "nearest_kept": "location",
+      "corr_with_nearest_kept": 0.6406000183762633
+    },
+    {
+      "concept": "gills on the underside",
+      "relevance": 0.5648967998709163,
+      "nearest_kept": "invertebrate",
+      "corr_with_nearest_kept": 0.6083584140280975
+    },
+    {
+      "concept": "good night vision",
+      "relevance": 0.3200027090771605,
+      "nearest_kept": "large eyes",
+      "corr_with_nearest_kept": 0.46215089990048025
+    },
+    {
+      "concept": "gray or brown fur",
+      "relevance": 0.6009839360491043,
+      "nearest_kept": "long, brown fur",
+      "corr_with_nearest_kept": 0.7857785774173057
+    },
+    {
+      "concept": "greenish-brown color",
+      "relevance": 0.1978348611798423,
+      "nearest_kept": "smooth, green bark",
+      "corr_with_nearest_kept": 0.594571638506854
+    },
+    {
+      "concept": "has a boyish face",
+      "relevance": 0.5499343806254867,
+      "nearest_kept": "has a short haircut",
+      "corr_with_nearest_kept": 0.7141519684539877
+    },
+    {
+      "concept": "has a gender",
+      "relevance": 0.3738301771972451,
+      "nearest_kept": "has a short haircut",
+      "corr_with_nearest_kept": 0.6160104799383125
+    },
+    {
+      "concept": "her young",
+      "relevance": 0.5033300081111843,
+      "nearest_kept": "between the ages of 0 and 12",
+      "corr_with_nearest_kept": 0.6240449337449546
+    },
+    {
+      "concept": "horns",
+      "relevance": 0.3792905552079476,
+      "nearest_kept": "hooves",
+      "corr_with_nearest_kept": 0.47554332910083985
+    },
+    {
+      "concept": "human",
+      "relevance": 0.4884524702797635,
+      "nearest_kept": "a person",
+      "corr_with_nearest_kept": 0.6430033722136406
+    },
+    {
+      "concept": "intended for sleeping on",
+      "relevance": 0.23801684826461633,
+      "nearest_kept": "a short, stubby stem",
+      "corr_with_nearest_kept": 0.50970305914169
+    },
+    {
+      "concept": "labels on the keys",
+      "relevance": 0.34436092150620734,
+      "nearest_kept": "lots of small keys",
+      "corr_with_nearest_kept": 0.7252997667608166
+    },
+    {
+      "concept": "landmass",
+      "relevance": 0.4780372737427885,
+      "nearest_kept": "landform",
+      "corr_with_nearest_kept": 0.7412040906507601
+    },
+    {
+      "concept": "large fins",
+      "relevance": 0.598490233777595,
+      "nearest_kept": "a dorsal fin",
+      "corr_with_nearest_kept": 0.8476807220084488
+    },
+    {
+      "concept": "large, black eyes",
+      "relevance": 0.4420210940535398,
+      "nearest_kept": "large eyes",
+      "corr_with_nearest_kept": 0.7732209199983097
+    },
+    {
+      "concept": "large, four-legged mammal",
+      "relevance": 0.7023355416326826,
+      "nearest_kept": "a animal",
+      "corr_with_nearest_kept": 0.8730327545407802
+    },
+    {
+      "concept": "large, green leaves",
+      "relevance": 0.4208631141152711,
+      "nearest_kept": "green leaves",
+      "corr_with_nearest_kept": 0.8890740335709684
+    },
+    {
+      "concept": "large, sharp teeth",
+      "relevance": 0.5631883925327116,
+      "nearest_kept": "sharp front teeth",
+      "corr_with_nearest_kept": 0.8519133502474029
+    },
+    {
+      "concept": "large, wing-like fins",
+      "relevance": 0.5071340158140086,
+      "nearest_kept": "a large, triangular fin",
+      "corr_with_nearest_kept": 0.8163307319924747
+    },
+    {
+      "concept": "legs or support underneath",
+      "relevance": 0.40526381651127896,
+      "nearest_kept": "legs to support the seat",
+      "corr_with_nearest_kept": 0.6849541366228319
+    },
+    {
+      "concept": "lemon",
+      "relevance": 0.45461991627265197,
+      "nearest_kept": "butter",
+      "corr_with_nearest_kept": 0.5990441887598142
+    },
+    {
+      "concept": "lipstick",
+      "relevance": 0.4312198413068685,
+      "nearest_kept": "a feminine face",
+      "corr_with_nearest_kept": 0.5247850475272552
+    },
+    {
+      "concept": "long arms",
+      "relevance": 0.40439810884905475,
+      "nearest_kept": "long tail",
+      "corr_with_nearest_kept": 0.6634999339462646
+    },
+    {
+      "concept": "long ears",
+      "relevance": 0.5890835351818949,
+      "nearest_kept": "large, pointy ears",
+      "corr_with_nearest_kept": 0.8420399459698736
+    },
+    {
+      "concept": "long legs",
+      "relevance": 0.3867837161479248,
+      "nearest_kept": "short legs",
+      "corr_with_nearest_kept": 0.7595847758614115
+    },
+    {
+      "concept": "long, drooping branches",
+      "relevance": 0.5361541557297206,
+      "nearest_kept": "a branch",
+      "corr_with_nearest_kept": 0.8098777607417095
+    },
+    {
+      "concept": "long, powerful hind legs",
+      "relevance": 0.6362203520105536,
+      "nearest_kept": "two arms and two legs",
+      "corr_with_nearest_kept": 0.7788083024565726
+    },
+    {
+      "concept": "long, spiny legs",
+      "relevance": 0.507838651833513,
+      "nearest_kept": "hairy or spiny legs",
+      "corr_with_nearest_kept": 0.8398964457110216
+    },
+    {
+      "concept": "lots of smoke",
+      "relevance": 0.43225571379979993,
+      "nearest_kept": "the sky",
+      "corr_with_nearest_kept": 0.5756595902383639
+    },
+    {
+      "concept": "love",
+      "relevance": 0.26762604612798646,
+      "nearest_kept": "time",
+      "corr_with_nearest_kept": 0.5831788965373443
+    },
+    {
+      "concept": "lush, green leaves",
+      "relevance": 0.43657341182309023,
+      "nearest_kept": "green leaves",
+      "corr_with_nearest_kept": 0.9594333130179141
+    },
+    {
+      "concept": "machine",
+      "relevance": 0.5678400017554137,
+      "nearest_kept": "a large, powerful engine",
+      "corr_with_nearest_kept": 0.6090365198150062
+    },
+    {
+      "concept": "made of asphalt or concrete",
+      "relevance": 0.2807847448541516,
+      "nearest_kept": "streets",
+      "corr_with_nearest_kept": 0.5681956871200461
+    },
+    {
+      "concept": "made of stone or brick",
+      "relevance": 0.3731368244353504,
+      "nearest_kept": "a hole in the wall",
+      "corr_with_nearest_kept": 0.5238997283084098
+    },
+    {
+      "concept": "male",
+      "relevance": 0.5402724906351389,
+      "nearest_kept": "often has stripes or spots",
+      "corr_with_nearest_kept": 0.6981711730980804
+    },
+    {
+      "concept": "mammal",
+      "relevance": 0.6642296952179917,
+      "nearest_kept": "a animal",
+      "corr_with_nearest_kept": 0.8533014983445866
+    },
+    {
+      "concept": "many legs",
+      "relevance": 0.4596002502773335,
+      "nearest_kept": "hairy or spiny legs",
+      "corr_with_nearest_kept": 0.7376304977276851
+    },
+    {
+      "concept": "markings for lanes",
+      "relevance": 0.45593531606009685,
+      "nearest_kept": "tracks for wheels",
+      "corr_with_nearest_kept": 0.6036014855142895
+    },
+    {
+      "concept": "marsupial",
+      "relevance": 0.7000850606059029,
+      "nearest_kept": "a joey",
+      "corr_with_nearest_kept": 0.8699882605637932
+    },
+    {
+      "concept": "mode of transportation",
+      "relevance": 0.6565232431157149,
+      "nearest_kept": "transportation",
+      "corr_with_nearest_kept": 0.8436242544784694
+    },
+    {
+      "concept": "mollusc",
+      "relevance": 0.5478351115118367,
+      "nearest_kept": "crustacean",
+      "corr_with_nearest_kept": 0.6304698959634684
+    },
+    {
+      "concept": "motorized vehicle",
+      "relevance": 0.5482131850107876,
+      "nearest_kept": "four wheels",
+      "corr_with_nearest_kept": 0.7117422435308218
+    },
+    {
+      "concept": "moves by wriggling",
+      "relevance": 0.27067061994306724,
+      "nearest_kept": "a screw-top or corked top",
+      "corr_with_nearest_kept": 0.4670619052595176
+    },
+    {
+      "concept": "multiple doors",
+      "relevance": 0.5526160327375832,
+      "nearest_kept": "windows and doors",
+      "corr_with_nearest_kept": 0.8942963122091898
+    },
+    {
+      "concept": "multiple rows of windows",
+      "relevance": 0.5931745201662908,
+      "nearest_kept": "large windows",
+      "corr_with_nearest_kept": 0.8980982873917316
+    },
+    {
+      "concept": "narrow hips",
+      "relevance": 0.4432124437911375,
+      "nearest_kept": "long and slender",
+      "corr_with_nearest_kept": 0.5378687124185786
+    },
+    {
+      "concept": "needles",
+      "relevance": 0.40591137443206976,
+      "nearest_kept": "evergreen needles",
+      "corr_with_nearest_kept": 0.5942121108713879
+    },
+    {
+      "concept": "no legs",
+      "relevance": 0.43310798186748534,
+      "nearest_kept": "short legs",
+      "corr_with_nearest_kept": 0.8008517698551655
+    },
+    {
+      "concept": "no pattern or design",
+      "relevance": 0.4252425931016353,
+      "nearest_kept": "simple, unadorned design",
+      "corr_with_nearest_kept": 0.5782614913285985
+    },
+    {
+      "concept": "nuts",
+      "relevance": 0.4296484168690241,
+      "nearest_kept": "a peanut",
+      "corr_with_nearest_kept": 0.5595977204930772
+    },
+    {
+      "concept": "object",
+      "relevance": 0.41621071077619104,
+      "nearest_kept": "man-made object",
+      "corr_with_nearest_kept": 0.5454853452994265
+    },
+    {
+      "concept": "often brightly colored",
+      "relevance": 0.43813311376131736,
+      "nearest_kept": "brightly colored wings",
+      "corr_with_nearest_kept": 0.6204038109372123
+    },
+    {
+      "concept": "often found in the dirt",
+      "relevance": 0.4059991687616688,
+      "nearest_kept": "dirt",
+      "corr_with_nearest_kept": 0.6018014339600871
+    },
+    {
+      "concept": "often has towers and turrets",
+      "relevance": 0.5287531203682657,
+      "nearest_kept": "a sturdy base",
+      "corr_with_nearest_kept": 0.5115377379383738
+    },
+    {
+      "concept": "pedals attached to the frame",
+      "relevance": 0.5648393553798569,
+      "nearest_kept": "a frame connecting the wheels",
+      "corr_with_nearest_kept": 0.7880554689938172
+    },
+    {
+      "concept": "pedestrians",
+      "relevance": 0.4326507850380417,
+      "nearest_kept": "transportation",
+      "corr_with_nearest_kept": 0.5584997604600875
+    },
+    {
+      "concept": "pillows",
+      "relevance": 0.3984634361822313,
+      "nearest_kept": "a comforter",
+      "corr_with_nearest_kept": 0.45581566422640535
+    },
+    {
+      "concept": "pine needles",
+      "relevance": 0.41897424917768267,
+      "nearest_kept": "evergreen needles",
+      "corr_with_nearest_kept": 0.8024779347068541
+    },
+    {
+      "concept": "plants",
+      "relevance": 0.5931915947306522,
+      "nearest_kept": "leaves",
+      "corr_with_nearest_kept": 0.859787459932001
+    },
+    {
+      "concept": "plenty of space for seating",
+      "relevance": 0.6747487696464769,
+      "nearest_kept": "a living room",
+      "corr_with_nearest_kept": 0.7066165896231296
+    },
+    {
+      "concept": "pointed leaves",
+      "relevance": 0.5306876269021324,
+      "nearest_kept": "leaves",
+      "corr_with_nearest_kept": 0.8601504084782169
+    },
+    {
+      "concept": "primate",
+      "relevance": 0.6309477307194573,
+      "nearest_kept": "ape",
+      "corr_with_nearest_kept": 0.6749487191975277
+    },
+    {
+      "concept": "propulsion at the back",
+      "relevance": 0.612392994730214,
+      "nearest_kept": "a large, powerful engine",
+      "corr_with_nearest_kept": 0.6842567485491301
+    },
+    {
+      "concept": "pups",
+      "relevance": 0.4520529007079787,
+      "nearest_kept": "fur covering the body",
+      "corr_with_nearest_kept": 0.5935957264145502
+    },
+    {
+      "concept": "roots",
+      "relevance": 0.40434658338135293,
+      "nearest_kept": "soil",
+      "corr_with_nearest_kept": 0.6125258833682791
+    },
+    {
+      "concept": "saltwater",
+      "relevance": 0.5083038958323985,
+      "nearest_kept": "waves",
+      "corr_with_nearest_kept": 0.7483257096342923
+    },
+    {
+      "concept": "sand",
+      "relevance": 0.31523467222205226,
+      "nearest_kept": "a desert",
+      "corr_with_nearest_kept": 0.5667411659054074
+    },
+    {
+      "concept": "scales",
+      "relevance": 0.46943550227249314,
+      "nearest_kept": "large scales",
+      "corr_with_nearest_kept": 0.7976297970889145
+    },
+    {
+      "concept": "scales on the skin",
+      "relevance": 0.48041891853065716,
+      "nearest_kept": "reptilian skin",
+      "corr_with_nearest_kept": 0.7131408972515652
+    },
+    {
+      "concept": "scratches",
+      "relevance": 0.415782209320976,
+      "nearest_kept": "fur covering the body",
+      "corr_with_nearest_kept": 0.44917723526802966
+    },
+    {
+      "concept": "seaweed",
+      "relevance": 0.47102693318367117,
+      "nearest_kept": "crustacean",
+      "corr_with_nearest_kept": 0.5265665869598536
+    },
+    {
+      "concept": "seeds in the center",
+      "relevance": 0.6072311218046266,
+      "nearest_kept": "winged seeds",
+      "corr_with_nearest_kept": 0.8191313081041844
+    },
+    {
+      "concept": "several towers or turrets",
+      "relevance": 0.5614710209585784,
+      "nearest_kept": "a rocket engine",
+      "corr_with_nearest_kept": 0.5677233055012003
+    },
+    {
+      "concept": "sharp claws",
+      "relevance": 0.6530459036285808,
+      "nearest_kept": "two large claws",
+      "corr_with_nearest_kept": 0.8530304280519376
+    },
+    {
+      "concept": "short, coarse fur",
+      "relevance": 0.6572026768266186,
+      "nearest_kept": "fur covering the body",
+      "corr_with_nearest_kept": 0.7354937622714101
+    },
+    {
+      "concept": "short, furry legs",
+      "relevance": 0.6380988874397978,
+      "nearest_kept": "short legs",
+      "corr_with_nearest_kept": 0.7858116918251297
+    },
+    {
+      "concept": "short, velvety fur",
+      "relevance": 0.5330186789179358,
+      "nearest_kept": "fur covering the body",
+      "corr_with_nearest_kept": 0.7943678245266899
+    },
+    {
+      "concept": "siding or brick exterior",
+      "relevance": 0.4838138786757919,
+      "nearest_kept": "windows and doors",
+      "corr_with_nearest_kept": 0.6380036782877115
+    },
+    {
+      "concept": "slow movement",
+      "relevance": 0.3517807215012678,
+      "nearest_kept": "transportation",
+      "corr_with_nearest_kept": 0.48267447023893506
+    },
+    {
+      "concept": "small eyes and ears",
+      "relevance": 0.5552939782795867,
+      "nearest_kept": "two small, beady eyes",
+      "corr_with_nearest_kept": 0.7378666912658846
+    },
+    {
+      "concept": "speakers",
+      "relevance": 0.4154985554428056,
+      "nearest_kept": "a control room",
+      "corr_with_nearest_kept": 0.6136822441094489
+    },
+    {
+      "concept": "stone walls",
+      "relevance": 0.4103715657388957,
+      "nearest_kept": "rocks",
+      "corr_with_nearest_kept": 0.6035231457237277
+    },
+    {
+      "concept": "storage",
+      "relevance": 0.535407374151234,
+      "nearest_kept": "a garage",
+      "corr_with_nearest_kept": 0.6087032880947812
+    },
+    {
+      "concept": "striped fur",
+      "relevance": 0.5830987986093612,
+      "nearest_kept": "a striped coat",
+      "corr_with_nearest_kept": 0.7668719363681721
+    },
+    {
+      "concept": "structure",
+      "relevance": 0.524224260980089,
+      "nearest_kept": "small, round ears",
+      "corr_with_nearest_kept": 0.5788713304777523
+    },
+    {
+      "concept": "sugar",
+      "relevance": 0.49374238122755265,
+      "nearest_kept": "a mild flavor",
+      "corr_with_nearest_kept": 0.6051821614470299
+    },
+    {
+      "concept": "suntan lotion",
+      "relevance": 0.3219004253016635,
+      "nearest_kept": "sunscreen",
+      "corr_with_nearest_kept": 0.7951355226469675
+    },
+    {
+      "concept": "terrain",
+      "relevance": 0.5806558316499916,
+      "nearest_kept": "landform",
+      "corr_with_nearest_kept": 0.7819750843435317
+    },
+    {
+      "concept": "the Serengeti",
+      "relevance": 0.4555178341784995,
+      "nearest_kept": "Africa",
+      "corr_with_nearest_kept": 0.7378380804687701
+    },
+    {
+      "concept": "thorny branches",
+      "relevance": 0.5061871197216558,
+      "nearest_kept": "thorns",
+      "corr_with_nearest_kept": 0.791843139461971
+    },
+    {
+      "concept": "thunder",
+      "relevance": 0.41882400115019336,
+      "nearest_kept": "lightning",
+      "corr_with_nearest_kept": 0.7077405551765323
+    },
+    {
+      "concept": "timepiece",
+      "relevance": 0.39569224737830094,
+      "nearest_kept": "time",
+      "corr_with_nearest_kept": 0.8466927454697122
+    },
+    {
+      "concept": "tiny mouth",
+      "relevance": 0.569156967477083,
+      "nearest_kept": "small nose",
+      "corr_with_nearest_kept": 0.7833587296047883
+    },
+    {
+      "concept": "tool",
+      "relevance": 0.257078564774062,
+      "nearest_kept": "organism",
+      "corr_with_nearest_kept": 0.43979835979293047
+    },
+    {
+      "concept": "tram",
+      "relevance": 0.666019939122608,
+      "nearest_kept": "rail vehicle",
+      "corr_with_nearest_kept": 0.6954527688984653
+    },
+    {
+      "concept": "two doors",
+      "relevance": 0.45482729446481646,
+      "nearest_kept": "doors",
+      "corr_with_nearest_kept": 0.9286470261718094
+    },
+    {
+      "concept": "two feelers",
+      "relevance": 0.5017457502135474,
+      "nearest_kept": "long, antennae-like feelers",
+      "corr_with_nearest_kept": 0.7260624746811801
+    },
+    {
+      "concept": "two large, compound eyes",
+      "relevance": 0.5565474281045099,
+      "nearest_kept": "invertebrate",
+      "corr_with_nearest_kept": 0.6881976336635485
+    },
+    {
+      "concept": "two wheels",
+      "relevance": 0.6859084466454797,
+      "nearest_kept": "four wheels",
+      "corr_with_nearest_kept": 0.8550159006580987
+    },
+    {
+      "concept": "two wheels of equal size",
+      "relevance": 0.6955255240092105,
+      "nearest_kept": "large wheels",
+      "corr_with_nearest_kept": 0.8511737496581713
+    },
+    {
+      "concept": "unadorned",
+      "relevance": 0.3131635944679205,
+      "nearest_kept": "simple, unadorned design",
+      "corr_with_nearest_kept": 0.4842090362783141
+    },
+    {
+      "concept": "used to hold liquids or gases",
+      "relevance": 0.6078006911990268,
+      "nearest_kept": "man-made object",
+      "corr_with_nearest_kept": 0.6755114968056954
+    },
+    {
+      "concept": "usually bottom-dwelling",
+      "relevance": 0.5666620887050972,
+      "nearest_kept": "two small, beady eyes",
+      "corr_with_nearest_kept": 0.6669691566382212
+    },
+    {
+      "concept": "usually cryptic coloration",
+      "relevance": 0.5739153051078337,
+      "nearest_kept": "often has stripes or spots",
+      "corr_with_nearest_kept": 0.787929856325831
+    },
+    {
+      "concept": "various color patterns",
+      "relevance": 0.3026954299938216,
+      "nearest_kept": "lateral symmetry",
+      "corr_with_nearest_kept": 0.5143319768706013
+    },
+    {
+      "concept": "various sizes and shapes",
+      "relevance": 0.43637739266510434,
+      "nearest_kept": "a sturdy material",
+      "corr_with_nearest_kept": 0.5173439218915966
+    },
+    {
+      "concept": "vegetable",
+      "relevance": 0.6096400505863858,
+      "nearest_kept": "a lettuce",
+      "corr_with_nearest_kept": 0.7124047260833974
+    },
+    {
+      "concept": "vertebrate",
+      "relevance": 0.6179559136828044,
+      "nearest_kept": "aquatic animal",
+      "corr_with_nearest_kept": 0.793802473762706
+    },
+    {
+      "concept": "way",
+      "relevance": 0.44459877580454354,
+      "nearest_kept": "streets",
+      "corr_with_nearest_kept": 0.6975717361918208
+    },
+    {
+      "concept": "wears makeup",
+      "relevance": 0.4482113902836981,
+      "nearest_kept": "large eyes",
+      "corr_with_nearest_kept": 0.6352951765452481
+    },
+    {
+      "concept": "webbed feet",
+      "relevance": 0.5316889690558815,
+      "nearest_kept": "tiny feet",
+      "corr_with_nearest_kept": 0.632732343137327
+    },
+    {
+      "concept": "whiskers",
+      "relevance": 0.5598754705023684,
+      "nearest_kept": "a twitchy nose",
+      "corr_with_nearest_kept": 0.716663975970985
+    },
+    {
+      "concept": "windows",
+      "relevance": 0.5127214513873437,
+      "nearest_kept": "large windows",
+      "corr_with_nearest_kept": 0.8405817933458246
+    }
+  ]
+}

@@ -1,0 +1,447 @@
+{
+  "summary": {
+    "n_concepts": 65,
+    "relevance_mean": 0.5309376730428471,
+    "relevance_median": 0.5969548673772244,
+    "redundancy_mean_abs_corr": 0.24058093612135434,
+    "redundancy_nn_abs_corr": 0.6687931936393102,
+    "frac_concepts_with_dup_act": 0.16923076923076924,
+    "redundancy_mean_text_cos": 0.7641432285308838,
+    "redundancy_nn_text_cos": 0.8604303277455844,
+    "frac_concepts_with_dup_text": 0.1076923076923077,
+    "nnz": 297,
+    "NEC": 29.7,
+    "frac_concepts_unused": 0.0,
+    "acc_val": 0.8557999730110168,
+    "n_classes": 10,
+    "seed": 2,
+    "dataset": "cifar10",
+    "filter_mode": "random",
+    "keep_frac": 0.5,
+    "n_before_filter": 138,
+    "n_after_filter": 69,
+    "w_rel": 1.0,
+    "w_red": 1.0,
+    "agg": "max",
+    "method": "random",
+    "tag": "_random_k50_s2",
+    "runtime_s": 59.17239570617676,
+    "model_dir": "saved_models\\cifar10_cbm_2026_11_01_16_21_23_random_k50_s2"
+  },
+  "removed_by_filter": [
+    {
+      "concept": "a bed for carrying cargo",
+      "relevance": 0.7213203924565637,
+      "nearest_kept": "cargo",
+      "corr_with_nearest_kept": 0.8010818816912935
+    },
+    {
+      "concept": "a birdfeeder",
+      "relevance": 0.5218085714611894,
+      "nearest_kept": "a bird feeder",
+      "corr_with_nearest_kept": 0.9800179925255278
+    },
+    {
+      "concept": "a birdhouse",
+      "relevance": 0.4925863609171854,
+      "nearest_kept": "a bird feeder",
+      "corr_with_nearest_kept": 0.7427433792386426
+    },
+    {
+      "concept": "a boat",
+      "relevance": 0.819999562159356,
+      "nearest_kept": "a dock",
+      "corr_with_nearest_kept": 0.8326897432283862
+    },
+    {
+      "concept": "a branch",
+      "relevance": 0.4233423196349064,
+      "nearest_kept": "a tree",
+      "corr_with_nearest_kept": 0.6582860413196322
+    },
+    {
+      "concept": "a cat bed",
+      "relevance": 0.6413853764575829,
+      "nearest_kept": "a cat food dish",
+      "corr_with_nearest_kept": 0.8648883665948829
+    },
+    {
+      "concept": "a cat toy",
+      "relevance": 0.5634455738449463,
+      "nearest_kept": "a cat food dish",
+      "corr_with_nearest_kept": 0.8233452302559562
+    },
+    {
+      "concept": "a copilot",
+      "relevance": 0.41097063038799236,
+      "nearest_kept": "a pilot",
+      "corr_with_nearest_kept": 0.6351850056938941
+    },
+    {
+      "concept": "a crew",
+      "relevance": 0.3852357759128201,
+      "nearest_kept": "a captain",
+      "corr_with_nearest_kept": 0.5224023948438264
+    },
+    {
+      "concept": "a deck",
+      "relevance": 0.47865919708414967,
+      "nearest_kept": "a dock",
+      "corr_with_nearest_kept": 0.6828945974502524
+    },
+    {
+      "concept": "a driver",
+      "relevance": 0.7608654237052372,
+      "nearest_kept": "a cab for the driver",
+      "corr_with_nearest_kept": 0.8387038007750532
+    },
+    {
+      "concept": "a food bowl",
+      "relevance": 0.6496142701549,
+      "nearest_kept": "a cat food dish",
+      "corr_with_nearest_kept": 0.8364954453790732
+    },
+    {
+      "concept": "a forest",
+      "relevance": 0.45492418061785583,
+      "nearest_kept": "trees",
+      "corr_with_nearest_kept": 0.6817912640710039
+    },
+    {
+      "concept": "a four-legged mammal",
+      "relevance": 0.7850050897448048,
+      "nearest_kept": "four legs",
+      "corr_with_nearest_kept": 0.8712300859439792
+    },
+    {
+      "concept": "a gear shift",
+      "relevance": 0.5577766680463485,
+      "nearest_kept": "a steering wheel",
+      "corr_with_nearest_kept": 0.7736234895815416
+    },
+    {
+      "concept": "a halter",
+      "relevance": 0.6102928335029664,
+      "nearest_kept": "a bridle",
+      "corr_with_nearest_kept": 0.6824459253443248
+    },
+    {
+      "concept": "a hitch",
+      "relevance": 0.21679021865515843,
+      "nearest_kept": "four wheels",
+      "corr_with_nearest_kept": 0.3198576138017856
+    },
+    {
+      "concept": "a large body",
+      "relevance": 0.17657514780312056,
+      "nearest_kept": "a large, metal body",
+      "corr_with_nearest_kept": 0.6443298646501106
+    },
+    {
+      "concept": "a large size",
+      "relevance": 0.21319512864651155,
+      "nearest_kept": "a green or brown body",
+      "corr_with_nearest_kept": 0.40781954640833873
+    },
+    {
+      "concept": "a large, rectangular body",
+      "relevance": 0.4096055457840815,
+      "nearest_kept": "a large, metal body",
+      "corr_with_nearest_kept": 0.785690209599198
+    },
+    {
+      "concept": "a lead rope",
+      "relevance": 0.4351670872953045,
+      "nearest_kept": "a bridle",
+      "corr_with_nearest_kept": 0.5314455627114426
+    },
+    {
+      "concept": "a lily pad",
+      "relevance": 0.5650766382249134,
+      "nearest_kept": "lily pads",
+      "corr_with_nearest_kept": 0.8621882910564548
+    },
+    {
+      "concept": "a litter box",
+      "relevance": 0.5827024992348332,
+      "nearest_kept": "a cat food dish",
+      "corr_with_nearest_kept": 0.7255971610446711
+    },
+    {
+      "concept": "a mane and tail",
+      "relevance": 0.6588096897810617,
+      "nearest_kept": "quadruped",
+      "corr_with_nearest_kept": 0.7422868655729071
+    },
+    {
+      "concept": "a mast",
+      "relevance": 0.49608499237822,
+      "nearest_kept": "a captain",
+      "corr_with_nearest_kept": 0.6750048812495161
+    },
+    {
+      "concept": "a mosquito",
+      "relevance": 0.5744993995748913,
+      "nearest_kept": "a fly",
+      "corr_with_nearest_kept": 0.660891597579189
+    },
+    {
+      "concept": "a nest",
+      "relevance": 0.5281589952624978,
+      "nearest_kept": "a bird feeder",
+      "corr_with_nearest_kept": 0.5446797423957722
+    },
+    {
+      "concept": "a pedal",
+      "relevance": 0.35742514273438186,
+      "nearest_kept": "a reins",
+      "corr_with_nearest_kept": 0.5498045496857793
+    },
+    {
+      "concept": "a person",
+      "relevance": 0.35558050240484523,
+      "nearest_kept": "large, bulging eyes",
+      "corr_with_nearest_kept": 0.4883767672162527
+    },
+    {
+      "concept": "a pointed front end",
+      "relevance": 0.6276439579069226,
+      "nearest_kept": "a grille",
+      "corr_with_nearest_kept": 0.8610799867844392
+    },
+    {
+      "concept": "a port",
+      "relevance": 0.7269618266846636,
+      "nearest_kept": "a dock",
+      "corr_with_nearest_kept": 0.7819287717829808
+    },
+    {
+      "concept": "a reddish-brown coat",
+      "relevance": 0.4973535558428767,
+      "nearest_kept": "large, brown eyes",
+      "corr_with_nearest_kept": 0.6284939034816109
+    },
+    {
+      "concept": "a rifle",
+      "relevance": 0.25131856232158123,
+      "nearest_kept": "a deer stand",
+      "corr_with_nearest_kept": 0.4108744137154891
+    },
+    {
+      "concept": "a road",
+      "relevance": 0.6207762221489134,
+      "nearest_kept": "a cab for the driver",
+      "corr_with_nearest_kept": 0.7654843106768374
+    },
+    {
+      "concept": "a rudder",
+      "relevance": 0.6445670826128944,
+      "nearest_kept": "a captain",
+      "corr_with_nearest_kept": 0.6620342802102803
+    },
+    {
+      "concept": "a runway",
+      "relevance": 0.5834864555844779,
+      "nearest_kept": "a flight attendant",
+      "corr_with_nearest_kept": 0.6715238968515337
+    },
+    {
+      "concept": "a saddle",
+      "relevance": 0.6043935383507764,
+      "nearest_kept": "a bridle",
+      "corr_with_nearest_kept": 0.7964555832659779
+    },
+    {
+      "concept": "a seat",
+      "relevance": 0.15030763691112833,
+      "nearest_kept": "a bed",
+      "corr_with_nearest_kept": 0.3785618273313466
+    },
+    {
+      "concept": "a seatbelt",
+      "relevance": 0.3665851116696353,
+      "nearest_kept": "a dashboard",
+      "corr_with_nearest_kept": 0.5943801975840861
+    },
+    {
+      "concept": "a small, lithe body",
+      "relevance": 0.13234149922662247,
+      "nearest_kept": "a slender body",
+      "corr_with_nearest_kept": 0.4311413105816193
+    },
+    {
+      "concept": "a spider",
+      "relevance": 0.3789435444664181,
+      "nearest_kept": "a worm",
+      "corr_with_nearest_kept": 0.6093315678347567
+    },
+    {
+      "concept": "a tail",
+      "relevance": 0.5361893412425748,
+      "nearest_kept": "a cab for the driver",
+      "corr_with_nearest_kept": 0.7013936586118632
+    },
+    {
+      "concept": "a tire",
+      "relevance": 0.5232693594720117,
+      "nearest_kept": "a wheel",
+      "corr_with_nearest_kept": 0.6899746697814905
+    },
+    {
+      "concept": "a trailer",
+      "relevance": 0.8022182485512837,
+      "nearest_kept": "a cab for the driver",
+      "corr_with_nearest_kept": 0.7121954925849765
+    },
+    {
+      "concept": "a wet nose",
+      "relevance": 0.5183712151702713,
+      "nearest_kept": "a nose",
+      "corr_with_nearest_kept": 0.6221019910169614
+    },
+    {
+      "concept": "a windshield",
+      "relevance": 0.6853507120246961,
+      "nearest_kept": "a cab for the driver",
+      "corr_with_nearest_kept": 0.7935830339568486
+    },
+    {
+      "concept": "amphibian",
+      "relevance": 0.6345857460347087,
+      "nearest_kept": "a beetle",
+      "corr_with_nearest_kept": 0.6497444987418752
+    },
+    {
+      "concept": "engines",
+      "relevance": 0.6640153369462608,
+      "nearest_kept": "an engine",
+      "corr_with_nearest_kept": 0.8977018287508574
+    },
+    {
+      "concept": "engines on the wings",
+      "relevance": 0.7416041765761462,
+      "nearest_kept": "wings",
+      "corr_with_nearest_kept": 0.7636502305355293
+    },
+    {
+      "concept": "fur",
+      "relevance": 0.5968533599993978,
+      "nearest_kept": "a cat food dish",
+      "corr_with_nearest_kept": 0.6207078824451453
+    },
+    {
+      "concept": "grass",
+      "relevance": 0.40414678145193944,
+      "nearest_kept": "a pasture",
+      "corr_with_nearest_kept": 0.6630484033060958
+    },
+    {
+      "concept": "hooves",
+      "relevance": 0.6931117667145866,
+      "nearest_kept": "quadruped",
+      "corr_with_nearest_kept": 0.7241783075650057
+    },
+    {
+      "concept": "insects",
+      "relevance": 0.516566007603619,
+      "nearest_kept": "a fly",
+      "corr_with_nearest_kept": 0.49924002543942153
+    },
+    {
+      "concept": "landing gear",
+      "relevance": 0.646231811537513,
+      "nearest_kept": "wings",
+      "corr_with_nearest_kept": 0.7104105340201267
+    },
+    {
+      "concept": "large sails or engines",
+      "relevance": 0.771721427870092,
+      "nearest_kept": "multiple sails",
+      "corr_with_nearest_kept": 0.8788784745611615
+    },
+    {
+      "concept": "mammal",
+      "relevance": 0.6232124051916563,
+      "nearest_kept": "animal",
+      "corr_with_nearest_kept": 0.7585743927153037
+    },
+    {
+      "concept": "nature",
+      "relevance": 0.5726767471747484,
+      "nearest_kept": "a Hunter",
+      "corr_with_nearest_kept": 0.5617676607241153
+    },
+    {
+      "concept": "organism",
+      "relevance": 0.5901089810773384,
+      "nearest_kept": "living thing",
+      "corr_with_nearest_kept": 0.6894226852843319
+    },
+    {
+      "concept": "pointed ears",
+      "relevance": 0.6090408018467932,
+      "nearest_kept": "long ears",
+      "corr_with_nearest_kept": 0.7725446999066738
+    },
+    {
+      "concept": "side windows",
+      "relevance": 0.6039115937356079,
+      "nearest_kept": "a cab for the driver",
+      "corr_with_nearest_kept": 0.7232957585852533
+    },
+    {
+      "concept": "the ability to fly",
+      "relevance": 0.6931090320856131,
+      "nearest_kept": "wings",
+      "corr_with_nearest_kept": 0.8453190320624641
+    },
+    {
+      "concept": "the ocean",
+      "relevance": 0.6033580411126463,
+      "nearest_kept": "multiple sails",
+      "corr_with_nearest_kept": 0.7790848377580394
+    },
+    {
+      "concept": "transportation",
+      "relevance": 0.7629873193645743,
+      "nearest_kept": "a cab for the driver",
+      "corr_with_nearest_kept": 0.7758685089038339
+    },
+    {
+      "concept": "vertebrate",
+      "relevance": 0.6519571706825986,
+      "nearest_kept": "a Hunter",
+      "corr_with_nearest_kept": 0.6701558801995334
+    },
+    {
+      "concept": "watercraft",
+      "relevance": 0.7246704699845714,
+      "nearest_kept": "a dock",
+      "corr_with_nearest_kept": 0.7536786195509285
+    },
+    {
+      "concept": "webbed feet",
+      "relevance": 0.5611763819287159,
+      "nearest_kept": "an engine",
+      "corr_with_nearest_kept": 0.5707846530518232
+    },
+    {
+      "concept": "whiskers",
+      "relevance": 0.6383597667482475,
+      "nearest_kept": "a large, metal body",
+      "corr_with_nearest_kept": 0.6234696723841285
+    },
+    {
+      "concept": "white spots on the coat",
+      "relevance": 0.5550594756686783,
+      "nearest_kept": "four legs",
+      "corr_with_nearest_kept": 0.6978291702728849
+    },
+    {
+      "concept": "woods",
+      "relevance": 0.3427317852884327,
+      "nearest_kept": "trees",
+      "corr_with_nearest_kept": 0.5979628272609832
+    }
+  ]
+}
