@@ -17,12 +17,13 @@
     "clip_cutoff": 0.25,
     "proj_steps": 1000,
     "interpretability_cutoff": 0.45,
-    "lam": 0.0125,
+    "lam": 0.0007,
     "n_iters": 1000,
     "print": false
   },
-  "elapsed_seconds": 28.10203742980957,
+  "compat_enabled": true,
+  "elapsed_seconds": 106.49864673614502,
   "paper_reported_accuracy": 82.96,
-  "note": "Fill in 'reproduced_accuracy' after running evaluate_cbm.ipynb on the saved model.",
-  "reproduced_accuracy": 82.96
+  "note": "Fill in 'reproduced_accuracy' (see metrics.txt in the saved model folder, key acc_val, or evaluate_cbm.ipynb).",
+  "reproduced_accuracy": 88.33
 }

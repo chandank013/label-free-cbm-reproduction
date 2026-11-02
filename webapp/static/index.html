@@ -1,0 +1,698 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Concept Lab - Interpretable Vision with Label-Free CBMs</title>
+  <link rel="stylesheet" href="/static/app.css">
+</head>
+<body>
+
+  <!-- Top Navigation Bar -->
+  <header class="topbar">
+    <div class="brand-wrapper">
+      <svg class="brand-logo-svg" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M16 3L2 10L16 17L30 10L16 3Z" fill="#14B8A6" />
+        <path d="M2 15L16 22L30 15" stroke="#2DD4BF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M2 20L16 27L30 20" stroke="#0D9488" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      <div class="brand-title-wrap">
+        <span class="brand-title">Concept <span class="teal">Lab</span></span>
+        <div class="brand-divider"></div>
+        <span class="brand-subtitle">Interpretable Vision with Label-Free CBMs</span>
+      </div>
+    </div>
+
+    <!-- Navigation Tabs -->
+    <nav class="nav-tabs" aria-label="Main Navigation">
+      <a href="#compare" id="tab-nav-compare" class="nav-tab-btn active">
+        <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M16 16v1a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2h11a2 2 0 0 1 2 2v1"></path>
+          <path d="M18 8h4a2 2 0 0 1 2 2v7a2 2 0 0 1-2 2h-4"></path>
+          <circle cx="8" cy="12" r="2"></circle>
+          <circle cx="20" cy="12" r="2"></circle>
+        </svg>
+        <span>Compare</span>
+      </a>
+      <a href="#try" id="tab-nav-try" class="nav-tab-btn">
+        <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <polygon points="5 3 19 12 5 21 5 3"></polygon>
+        </svg>
+        <span>Try it</span>
+      </a>
+      <a href="#concepts" id="tab-nav-concepts" class="nav-tab-btn">
+        <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path>
+          <polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline>
+          <line x1="12" y1="22.08" x2="12" y2="12"></line>
+        </svg>
+        <span>Concepts</span>
+      </a>
+      <a href="#about" id="tab-nav-about" class="nav-tab-btn">
+        <svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="12" cy="12" r="10"></circle>
+          <line x1="12" y1="16" x2="12" y2="12"></line>
+          <line x1="12" y1="8" x2="12.01" y2="8"></line>
+        </svg>
+        <span>About</span>
+      </a>
+    </nav>
+
+    <div class="nav-right">
+      <a href="#about" class="github-link" title="Documentation & Info">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+          <path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/>
+        </svg>
+      </a>
+    </div>
+  </header>
+
+  <!-- Main Container -->
+  <main class="main-content">
+
+    <!-- ======================================================================
+         VIEW 1: COMPARE PAGE (#compare)
+         ====================================================================== -->
+    <section id="view-compare" class="view-section active">
+      <div class="compare-title-row">
+        <div>
+          <h1 class="compare-page-title">Original vs Filtered LF-CBM</h1>
+          <p class="compare-page-subtitle">Label-Free Concept Bottleneck Models</p>
+        </div>
+
+        <div class="toolbar-right">
+          <!-- Dataset Selector -->
+          <div class="control-group">
+            <span class="control-label">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <ellipse cx="12" cy="5" rx="9" ry="3"></ellipse>
+                <path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"></path>
+                <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"></path>
+              </svg>
+              Dataset
+            </span>
+            <select id="compare-dataset-select" class="select-input" aria-label="Select Dataset">
+              <!-- populated by JS -->
+            </select>
+          </div>
+
+          <!-- Budget Segmented Control -->
+          <div class="control-group">
+            <span class="control-label">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"></polygon>
+              </svg>
+              Filtered model budget
+            </span>
+            <div class="segmented-control" id="compare-budget-controls" role="group" aria-label="Budget Percent">
+              <button type="button" class="segmented-btn" data-budget="75">75%</button>
+              <button type="button" class="segmented-btn active" data-budget="50">50%</button>
+              <button type="button" class="segmented-btn" data-budget="25">25%</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 4 KPI Cards -->
+      <div class="kpi-grid">
+        <!-- Accuracy KPI -->
+        <div class="card kpi-card" id="kpi-accuracy">
+          <div class="kpi-header">
+            <div class="kpi-title-wrap">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0D9488" stroke-width="2.5">
+                <circle cx="12" cy="12" r="10"></circle>
+                <circle cx="12" cy="12" r="6"></circle>
+                <circle cx="12" cy="12" r="2"></circle>
+              </svg>
+              <span>Accuracy &uarr;</span>
+            </div>
+            <span class="tooltip-icon" title="Higher is better. Evaluated on validation split.">?</span>
+          </div>
+          <div class="kpi-values-row">
+            <div class="kpi-sub-col">
+              <span class="kpi-sub-label">Original</span>
+              <span class="kpi-num" id="kpi-acc-orig">—</span>
+            </div>
+            <div class="kpi-sub-col">
+              <span class="kpi-sub-label">Filtered</span>
+              <span class="kpi-num teal" id="kpi-acc-filt">—</span>
+            </div>
+            <div class="kpi-badge grey" id="kpi-acc-badge">—</div>
+          </div>
+        </div>
+
+        <!-- Number of Concepts KPI -->
+        <div class="card kpi-card" id="kpi-concepts">
+          <div class="kpi-header">
+            <div class="kpi-title-wrap">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0D9488" stroke-width="2">
+                <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path>
+              </svg>
+              <span>Number of Concepts &darr;</span>
+            </div>
+            <span class="tooltip-icon" title="Lower is better (more compact, higher sparsity).">?</span>
+          </div>
+          <div class="kpi-values-row">
+            <div class="kpi-sub-col">
+              <span class="kpi-sub-label">Original</span>
+              <span class="kpi-num" id="kpi-con-orig">—</span>
+            </div>
+            <div class="kpi-sub-col">
+              <span class="kpi-sub-label">Filtered</span>
+              <span class="kpi-num teal" id="kpi-con-filt">—</span>
+            </div>
+            <div class="kpi-badge green" id="kpi-con-badge">—</div>
+          </div>
+        </div>
+
+        <!-- Redundancy KPI -->
+        <div class="card kpi-card" id="kpi-redundancy">
+          <div class="kpi-header">
+            <div class="kpi-title-wrap">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0D9488" stroke-width="2">
+                <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
+                <polyline points="2 17 12 22 22 17"></polyline>
+                <polyline points="2 12 12 17 22 12"></polyline>
+              </svg>
+              <span>Redundancy &darr;</span>
+            </div>
+            <span class="tooltip-icon" title="Lower is better. Mean nearest-neighbor absolute correlation.">?</span>
+          </div>
+          <div class="kpi-values-row">
+            <div class="kpi-sub-col">
+              <span class="kpi-sub-label">Original</span>
+              <span class="kpi-num" id="kpi-red-orig">—</span>
+            </div>
+            <div class="kpi-sub-col">
+              <span class="kpi-sub-label">Filtered</span>
+              <span class="kpi-num teal" id="kpi-red-filt">—</span>
+            </div>
+            <div class="kpi-badge green" id="kpi-red-badge">—</div>
+          </div>
+        </div>
+
+        <!-- Relevance KPI -->
+        <div class="card kpi-card" id="kpi-relevance">
+          <div class="kpi-header">
+            <div class="kpi-title-wrap">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0D9488" stroke-width="2">
+                <circle cx="12" cy="12" r="10"></circle>
+                <path d="m16 12-4-4-4 4M12 16V9"></path>
+              </svg>
+              <span>Relevance &uarr;</span>
+            </div>
+            <span class="tooltip-icon" title="The filter selects on this statistic, so it is not independent evidence.">?</span>
+          </div>
+          <div class="kpi-values-row">
+            <div class="kpi-sub-col">
+              <span class="kpi-sub-label">Original</span>
+              <span class="kpi-num" id="kpi-rel-orig">—</span>
+            </div>
+            <div class="kpi-sub-col">
+              <span class="kpi-sub-label">Filtered</span>
+              <span class="kpi-num teal" id="kpi-rel-filt">—</span>
+            </div>
+            <div class="kpi-badge green" id="kpi-rel-badge">—</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Charts Row -->
+      <div class="charts-grid">
+        <!-- Accuracy vs Number of Concepts -->
+        <div class="card chart-card">
+          <div class="chart-header">
+            <div class="chart-title">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
+              </svg>
+              <span>Accuracy vs Number of Concepts</span>
+            </div>
+          </div>
+          <div class="chart-body-svg" id="chart-accuracy-curve">
+            <!-- Plain SVG injected here -->
+          </div>
+          <div class="chart-legend">
+            <div class="legend-item">
+              <span class="legend-indicator" style="background:#EF4444;"></span>
+              <span>Ours (Filtered)</span>
+            </div>
+            <div class="legend-item">
+              <span class="legend-indicator" style="background:#3B82F6;"></span>
+              <span>Top-k by CLIP activation</span>
+            </div>
+            <div class="legend-item">
+              <span class="legend-indicator" style="background:#9CA3AF;"></span>
+              <span>Random</span>
+            </div>
+            <div class="legend-item">
+              <span style="font-size:14px; line-height:1;">★</span>
+              <span>Original</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Redundancy (lower is better) -->
+        <div class="card chart-card">
+          <div class="chart-header">
+            <div class="chart-title">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="18" y1="20" x2="18" y2="10"></line>
+                <line x1="12" y1="20" x2="12" y2="4"></line>
+                <line x1="6" y1="20" x2="6" y2="14"></line>
+              </svg>
+              <span>Redundancy (lower is better)</span>
+            </div>
+          </div>
+          <div class="chart-body-svg" id="chart-redundancy-bars">
+            <!-- Plain SVG injected here -->
+          </div>
+          <div class="chart-legend">
+            <div class="legend-item">
+              <span class="legend-indicator" style="background:#94A3B8;"></span>
+              <span>Original</span>
+            </div>
+            <div class="legend-item">
+              <span class="legend-indicator" style="background:#0D9488;"></span>
+              <span>Filtered</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tables Row -->
+      <div class="tables-grid">
+        <!-- Paper vs Reproduced Results -->
+        <div class="card table-card">
+          <div class="table-title">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+              <line x1="3" y1="9" x2="21" y2="9"></line>
+              <line x1="9" y1="21" x2="9" y2="9"></line>
+            </svg>
+            <span>Paper vs Reproduced Results</span>
+          </div>
+          <div style="overflow-x:auto;">
+            <table class="custom-table" id="table-paper-vs-repro">
+              <thead>
+                <tr>
+                  <th>Dataset</th>
+                  <th>Paper (LF-CBM) &uarr;</th>
+                  <th>Reproduced &uarr;</th>
+                  <th>Difference (&Delta;)</th>
+                </tr>
+              </thead>
+              <tbody>
+                <!-- Populated by JS -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- Removed Concepts -->
+        <div class="card table-card">
+          <div class="table-title">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"></polygon>
+            </svg>
+            <span>Removed Concepts (from Concept Quality Filtering)</span>
+            <span class="tooltip-icon" title="Duplicate if Pearson r ≥ 0.80 with nearest retained concept; otherwise low relevance (η²).">?</span>
+          </div>
+          <div style="overflow-x:auto; max-height: 240px;">
+            <table class="custom-table" id="table-removed-concepts">
+              <thead>
+                <tr>
+                  <th style="width: 35px;">#</th>
+                  <th>Concept</th>
+                  <th>Reason</th>
+                  <th>Example (Related Concept)</th>
+                </tr>
+              </thead>
+              <tbody>
+                <!-- Populated by JS -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-note">&copy; Concept Lab &bull; Live data from disk runs</div>
+    </section>
+
+    <!-- ======================================================================
+         VIEW 2: TRY-IT PAGE (#try)
+         ====================================================================== -->
+    <section id="view-try" class="view-section">
+      <!-- Toolbar -->
+      <div class="toolbar-card">
+        <div class="toolbar-left">
+          <div class="control-group">
+            <span class="control-label">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <ellipse cx="12" cy="5" rx="9" ry="3"></ellipse>
+                <path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"></path>
+                <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"></path>
+              </svg>
+              Dataset
+            </span>
+            <select id="try-dataset-select" class="select-input" aria-label="Dataset Selector">
+              <!-- populated by JS -->
+            </select>
+          </div>
+        </div>
+
+        <div class="toolbar-right">
+          <div class="control-group">
+            <span class="control-label">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"></polygon>
+              </svg>
+              Filtered model budget (keep top concepts)
+            </span>
+            <div class="segmented-control" id="try-budget-controls" role="group" aria-label="Budget Percent">
+              <button type="button" class="segmented-btn" data-budget="75">75%</button>
+              <button type="button" class="segmented-btn active" data-budget="50">50%</button>
+              <button type="button" class="segmented-btn" data-budget="25">25%</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Upload Drop Zone -->
+      <div class="upload-zone-wrapper">
+        <div class="drop-zone" id="image-drop-zone">
+          <input type="file" id="file-upload-input" accept="image/jpeg,image/png,image/webp" style="display:none;" />
+          <div class="drop-zone-content" id="drop-zone-default">
+            <div class="upload-icon-circle">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                <polyline points="17 8 12 3 7 8"></polyline>
+                <line x1="12" y1="3" x2="12" y2="15"></line>
+              </svg>
+            </div>
+            <div class="drop-zone-text">
+              <h4>Drop a photo here</h4>
+              <p>or click to browse (JPG, PNG, JPEG, WEBP &bull; Max 10MB)</p>
+            </div>
+          </div>
+          <div class="preview-thumb-container" id="drop-zone-preview" style="display:none;">
+            <img id="preview-img" class="preview-thumb" alt="Uploaded preview" />
+            <div class="drop-zone-text">
+              <h4 id="preview-filename">image.jpg</h4>
+              <p>Click or drag a new image to replace</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Agreement Pill -->
+      <div class="agreement-pill-container" id="agreement-container" style="display:none;">
+        <div class="agreement-pill green" id="agreement-pill">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <path d="M20 6L9 17l-5-5"></path>
+          </svg>
+          <span id="agreement-text">Both models agree</span>
+        </div>
+      </div>
+
+      <!-- Side-by-Side Model Cards -->
+      <div class="side-by-side-grid" id="predictions-grid">
+        <!-- Left Card: Phase 1 - Original model -->
+        <div class="card model-card">
+          <div class="model-card-header grey-header">
+            <div class="card-title-wrap">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
+                <polyline points="2 17 12 22 22 17"></polyline>
+                <polyline points="2 12 12 17 22 12"></polyline>
+              </svg>
+              <span>Phase 1 &mdash; Original model</span>
+            </div>
+            <span class="header-badge grey-badge" id="orig-model-badge">LF-CBM (Original)</span>
+          </div>
+
+          <div class="model-card-body">
+            <!-- Predicted Class & Confidence -->
+            <div class="prediction-row">
+              <div>
+                <div class="pred-meta-label">Predicted Class</div>
+                <div class="pred-class-name" id="orig-pred-class">&mdash;</div>
+              </div>
+              <div class="confidence-box">
+                <div class="pred-meta-label">Confidence</div>
+                <div class="conf-value" id="orig-conf-val">&mdash;</div>
+                <div class="conf-bar-track">
+                  <div class="conf-bar-fill" id="orig-conf-bar" style="width: 0%;"></div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Top Concepts Explanation -->
+            <div>
+              <div class="concepts-section-title">
+                <span>Why this prediction? (Top concepts)</span>
+                <span class="tooltip-icon" title="Per-concept contribution = concept activation × final-layer weight for the predicted class.">?</span>
+              </div>
+              <div class="concepts-list" id="orig-concepts-list">
+                <div style="color:var(--text-muted); font-size:0.85rem; padding:1rem 0; text-align:center;">
+                  Upload an image to see concept explanations.
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card Footer Stat Tiles -->
+          <div class="model-card-footer">
+            <div class="stat-tile lavender">
+              <div class="stat-tile-header">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path>
+                </svg>
+                <span># Concepts</span>
+              </div>
+              <div class="stat-tile-val" id="orig-stat-concepts">&mdash;</div>
+            </div>
+
+            <div class="stat-tile lavender">
+              <div class="stat-tile-header">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
+                  <polyline points="2 17 12 22 22 17"></polyline>
+                </svg>
+                <span>Concepts / Class</span>
+              </div>
+              <div class="stat-tile-val" id="orig-stat-nec">&mdash;</div>
+            </div>
+
+            <div class="stat-tile lavender">
+              <div class="stat-tile-header">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+                  <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+                </svg>
+                <span>Redundancy</span>
+              </div>
+              <div class="stat-tile-val" id="orig-stat-redundancy">&mdash;</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Card: Phase 2 - Filtered model -->
+        <div class="card model-card">
+          <div class="model-card-header mint-header">
+            <div class="card-title-wrap">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0D9488" stroke-width="2">
+                <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
+                <polyline points="2 17 12 22 22 17"></polyline>
+                <polyline points="2 12 12 17 22 12"></polyline>
+              </svg>
+              <span>Phase 2 &mdash; Filtered model</span>
+            </div>
+            <span class="header-badge mint-badge" id="filt-model-badge">LF-CBM (Filtered)</span>
+          </div>
+
+          <div class="model-card-body">
+            <!-- Predicted Class & Confidence -->
+            <div class="prediction-row">
+              <div>
+                <div class="pred-meta-label">Predicted Class</div>
+                <div class="pred-class-name" id="filt-pred-class">&mdash;</div>
+              </div>
+              <div class="confidence-box">
+                <div class="pred-meta-label">Confidence</div>
+                <div class="conf-value" id="filt-conf-val">&mdash;</div>
+                <div class="conf-bar-track">
+                  <div class="conf-bar-fill" id="filt-conf-bar" style="width: 0%;"></div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Top Concepts Explanation -->
+            <div>
+              <div class="concepts-section-title">
+                <span>Why this prediction? (Top concepts)</span>
+                <span class="tooltip-icon" title="Per-concept contribution = concept activation × final-layer weight for the predicted class.">?</span>
+              </div>
+              <div class="concepts-list" id="filt-concepts-list">
+                <div style="color:var(--text-muted); font-size:0.85rem; padding:1rem 0; text-align:center;">
+                  Upload an image to see concept explanations.
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card Footer Stat Tiles -->
+          <div class="model-card-footer">
+            <div class="stat-tile mint">
+              <div class="stat-tile-header">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path>
+                </svg>
+                <span># Concepts</span>
+              </div>
+              <div class="stat-tile-val" id="filt-stat-concepts">&mdash;</div>
+            </div>
+
+            <div class="stat-tile mint">
+              <div class="stat-tile-header">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
+                  <polyline points="2 17 12 22 22 17"></polyline>
+                </svg>
+                <span>Concepts / Class</span>
+              </div>
+              <div class="stat-tile-val" id="filt-stat-nec">&mdash;</div>
+            </div>
+
+            <div class="stat-tile mint">
+              <div class="stat-tile-header">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+                  <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+                </svg>
+                <span>Redundancy</span>
+              </div>
+              <div class="stat-tile-val" id="filt-stat-redundancy">&mdash;</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Disclosures & Warning Box -->
+      <div id="try-warning-box" class="info-alert-box" style="margin-top: 1rem;">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="flex-shrink:0;">
+          <circle cx="12" cy="12" r="10"></circle>
+          <line x1="12" y1="8" x2="12" y2="12"></line>
+          <line x1="12" y1="16" x2="12.01" y2="16"></line>
+        </svg>
+        <div>
+          <strong>Model Disclosure & Constraints:</strong> The models operate under a closed-world assumption &mdash; they only know their dataset's predefined classes and will always select one. Softmax confidence is uncalibrated.
+          <button id="btn-toggle-classes" style="background:none; border:none; color:#1d4ed8; font-weight:600; cursor:pointer; text-decoration:underline; margin-left:6px;">View supported classes</button>
+          <div id="classes-list-box" style="display:none; margin-top:0.5rem; max-height:120px; overflow-y:auto; background:#ffffff; padding:0.5rem; border-radius:4px; border:1px solid #cbd5e1; font-size:0.8rem;"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         VIEW 3: CONCEPTS PAGE (#concepts)
+         ====================================================================== -->
+    <section id="view-concepts" class="view-section">
+      <div class="toolbar-card">
+        <div class="toolbar-left">
+          <div class="control-group">
+            <span class="control-label">Dataset</span>
+            <select id="concepts-dataset-select" class="select-input"></select>
+          </div>
+          <div class="control-group">
+            <span class="control-label">Class</span>
+            <select id="concepts-class-select" class="select-input" style="min-width: 200px;"></select>
+          </div>
+        </div>
+        <div class="toolbar-right">
+          <div class="control-group">
+            <span class="control-label">Budget</span>
+            <div class="segmented-control" id="concepts-budget-controls">
+              <button type="button" class="segmented-btn" data-budget="75">75%</button>
+              <button type="button" class="segmented-btn active" data-budget="50">50%</button>
+              <button type="button" class="segmented-btn" data-budget="25">25%</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="concepts-grid-view">
+        <div class="card" style="padding:1.25rem;">
+          <h3 style="font-size:1.05rem; font-weight:700; color:var(--navy-800); margin-bottom:1rem;">
+            Original Model &mdash; Top-Weighted Concepts
+          </h3>
+          <div id="concepts-col-orig"></div>
+        </div>
+
+        <div class="card" style="padding:1.25rem;">
+          <h3 style="font-size:1.05rem; font-weight:700; color:var(--teal-700); margin-bottom:1rem;">
+            Filtered Model &mdash; Top-Weighted Concepts
+          </h3>
+          <div id="concepts-col-filt"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         VIEW 4: ABOUT PAGE (#about)
+         ====================================================================== -->
+    <section id="view-about" class="view-section">
+      <div class="about-container">
+        <div class="card" style="padding:1.5rem;">
+          <h2 style="font-size:1.35rem; font-weight:700; color:var(--navy-800); margin-bottom:0.75rem;">
+            About Concept Lab &bull; LF-CBM
+          </h2>
+          <p style="color:var(--text-secondary); margin-bottom:1rem;">
+            Concept Lab provides an interactive, honest interface for exploring and comparing 
+            <strong>Phase 1 (Original Label-Free CBM)</strong> with <strong>Phase 2 (Concept-Quality-Filtered LF-CBM)</strong>.
+          </p>
+          <p style="color:var(--text-secondary); margin-bottom:1rem;">
+            Label-Free Concept Bottleneck Models (LF-CBM) construct an interpretable concept bottleneck layer from text corpora without requiring manual concept annotations. 
+            Phase 2 applies Concept Quality Filtering (greedy submodular selection on relevance and redundancy) to prune redundant and non-discriminative concepts while preserving classification accuracy.
+          </p>
+
+          <h3 style="font-size:1.1rem; font-weight:700; color:var(--navy-800); margin:1.25rem 0 0.5rem 0;">
+            Scientific Honesty & Technical Disclosures
+          </h3>
+          <ul style="color:var(--text-secondary); padding-left:1.25rem; display:flex; flex-direction:column; gap:0.5rem; font-size:0.9rem;">
+            <li><strong>Closed-World Assumption:</strong> The models only recognize classes within their training dataset and will always output a prediction from this set, even for out-of-distribution inputs.</li>
+            <li><strong>Softmax Calibration:</strong> Raw softmax confidence scores are uncalibrated heuristics. High confidence does not guarantee ground truth correctness.</li>
+            <li><strong>Relevance Metric Selection:</strong> The Relevance KPI measures the objective function directly optimized by the filter, so it should not be interpreted as an independent empirical finding.</li>
+            <li><strong>Validation vs Test Split:</strong> Accuracy is evaluated on the authors' validation split, which corresponds to the official test splits for CIFAR-10, CIFAR-100, and CUB-200.</li>
+            <li><strong>Zero CDN / Full Offline Operation:</strong> All fonts, styling, charts, and model inference run completely locally on 127.0.0.1 with zero external requests.</li>
+          </ul>
+
+          <h3 style="font-size:1.1rem; font-weight:700; color:var(--navy-800); margin:1.5rem 0 0.75rem 0;">
+            Detected Saved Models Inventory
+          </h3>
+          <div style="overflow-x:auto;">
+            <table class="custom-table" id="table-about-models">
+              <thead>
+                <tr>
+                  <th>Dataset</th>
+                  <th>Folder Name</th>
+                  <th>Method</th>
+                  <th>Budget</th>
+                  <th>Seed</th>
+                  <th>Label</th>
+                </tr>
+              </thead>
+              <tbody>
+                <!-- Populated by JS -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <script src="/static/charts.js"></script>
+  <script src="/static/app.js"></script>
+</body>
+</html>

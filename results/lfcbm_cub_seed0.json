@@ -21,8 +21,9 @@
     "n_iters": 5000,
     "print": false
   },
-  "elapsed_seconds": 562.0570924282074,
+  "compat_enabled": true,
+  "elapsed_seconds": 655.1584005355835,
   "paper_reported_accuracy": 74.59,
-  "note": "Fill in 'reproduced_accuracy' after running evaluate_cbm.ipynb on the saved model.",
-  "reproduced_accuracy": 74.16
+  "note": "Fill in 'reproduced_accuracy' (see metrics.txt in the saved model folder, key acc_val, or evaluate_cbm.ipynb).",
+  "reproduced_accuracy": 74.13
 }
