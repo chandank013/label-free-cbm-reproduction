@@ -1,158 +1,167 @@
-# AI Usage Log — DA351 Phase 1
+# AI Usage Log — DA351 Explainable AI Course Project
 
-**Tool used**: Claude (Anthropic), web/chat interface
-**Project**: Replication of "Label-Free Concept Bottleneck Models" (Oikarinen et al., ICLR 2023)
+Covers Phase 0 (paper selection), Phase 1 (replication), Phase 2 (extension) and the demo web app.
+Course policy: AI tools are allowed, but every team must record the tool, the prompts and how the output was modified. This file does that.
 
----
+## 1. Tools used
 
-## Session 1 — Paper selection & Phase 0 proposal
+| Tool | What it was used for |
+|---|---|
+| **Claude (Anthropic)**, claude.ai chat, including its code-execution sandbox and web search | Paper shortlist, Phase 0 slide, Phase 1 repo scaffold and debugging help, Phase 2 design and code, literature check, documents, web-app planning and prompts |
+| **ChatGPT (image generation)** | Rendering the two UI mockups (Try-it page, Compare page) from prompts written by Claude |
+| **AI coding agent (Antigravity)** | Implementing the web app from the specification prompt written by Claude (prompt P63 below) |
 
-**Prompts used** (in order):
-- "DA351 – Explainable AI (XAI) Course Project: Research Replication and Extension Objective..." (pasted the full course project brief)
-- "Provide best paper of each domains also suggest the best one"
-- "yes" (requesting the Phase 0 proposal slide)
+**What the AI could and could not run.** Claude's sandbox has no access to the team's GPU, datasets or saved models. It ran only *synthetic-data* tests (planted irrelevant/duplicate concepts, logic tests with stand-ins for PyTorch) and generated files. **Every accuracy, concept count, redundancy and relevance number in this project was produced by the team running the code on its own machine.** No AI tool produced or altered experimental results.
 
-**Output received**: A shortlist of three candidate papers, one per domain (Computer Vision: Label-Free CBM, ICLR 2023; NLP: Faithfulness Tests for Natural Language Explanations, ACL 2023; Tabular/Healthcare: a SHAP-based tumor classification paper), with a recommendation to select Label-Free CBM and a justification. A one-slide PPTX proposal (title, problem statement, dataset, XAI method, reason for selection) built from that recommendation.
+## 2. How to read the prompt log
 
-**How output was modified**: *[Team to fill in — e.g. "Added team name/roll numbers to the slide", "Confirmed paper choice with faculty before finalizing", "Edited reason-for-selection wording"]*
-
----
-
-## Session 2 — Replication scaffold setup (Phase 1)
-
-**Prompts used**:
-- "yes i want to reproduce on all dataset"
-- "Free Google Colab (limited GPU hours)" (in response to a compute-availability question)
-
-**Output received**: A GitHub-ready repo scaffold consisting of: `original_lfcbm/` (the authors' unmodified public code, cloned from `github.com/Trustworthy-ML-Lab/Label-free-CBM`, kept with full attribution), `run_experiment.py` (a wrapper adding fixed-seed reproducibility, per-dataset hyperparameter configs matching the authors' own `training_commands.txt`, and run logging), `collect_results.py` (auto-generates a paper-vs-reproduced comparison table), a `README.md` documenting per-dataset feasibility on limited compute, and templates for the AI usage log and 1-page replication summary.
-
-**How output was modified**: *[Team to fill in — e.g. "Ran on our own Colab/local GPU, no code changes to hyperparameters", "Adjusted which datasets we prioritized given time constraints"]*
+- Prompts are quoted **verbatim from the chat history** (spelling and typos kept), numbered P1–P72 in order.
+- `[square brackets]` mean pasted material (terminal logs, screenshots, files, tables) that is summarised here instead of copied.
+- Stages: **A** Phase 0 · **B** Phase 1 · **C** Phase 2 · **D** Web app · **E** Phase 2 deliverables and documentation.
 
 ---
 
-## Session 3 — Switching to local GPU, driver/CUDA setup
+## Stage A — Phase 0: paper selection and proposal slide
 
-**Prompts used**:
-- "can i run on my local laptop gpu 5050"
-- "in which folder it will saved automatically saved"
+- **P1** `[Pasted the full course brief: "DA351 – Explainable AI (XAI) Course Project: Research Replication and Extension" — team rules, Phase 0/1/2 tasks and deadlines, AI-usage policy, plagiarism policy, reproducibility requirements]`
+- **P2** `[Button answer to "What would you like help with first?"]` → "Finding/selecting a paper (Phase 0)"
+- **P3** "Provide best paper ofeach domains also suggest the best one"
+- **P4** "yes" *(asked Claude to draft the Phase 0 one-slide proposal)*
 
-**Output received**: Guidance on Blackwell-generation GPU (RTX 50-series) PyTorch/CUDA compatibility requirements, VRAM/disk budgeting for an 8GB-class laptop GPU, and confirmation (via inspecting `torchvision`'s source) of exactly where each dataset auto-downloads to (`~/.cache`) versus what needed manual setup (CUB, pretrained backbones).
-
-**How output was modified**: No code changes — this was environment/setup guidance we followed directly (installing the correct PyTorch build for our GPU, confirming dataset cache locations).
-
----
-
-## Session 4 — Debugging Windows-specific runtime errors
-
-**Prompts used** (error tracebacks pasted verbatim from our terminal, across several rounds):
-- A `torch.AcceleratorError: CUDA error: resource already mapped` traceback (pin-memory thread crash)
-- A `torch.OutOfMemoryError: CUDA out of memory` traceback
-- "why not to keep in project directory folder" / "i will add to .gitignore"
-
-**Output received**: Diagnosis that `original_lfcbm/utils.py` hardcoded `pin_memory=True` with `num_workers=8`, which triggers a known PyTorch/Windows CUDA race condition; a one-line fix (`pin_memory=False`). Diagnosis that the default `batch_size=512` exceeds our GPU's available VRAM; added `--batch_size`/`--saga_batch_size` CLI flags to `run_experiment.py` to override per-run. Guidance on `.gitignore` contents for large datasets/venvs.
-
-**How output was modified**: We applied the `pin_memory=False` patch to our local copy of `original_lfcbm/utils.py` directly (one-line find-and-replace across 4 occurrences). We used `--batch_size 64` (later 32 for ResNet50-based datasets) instead of the paper's default 512.
+**AI output:** shortlist of one paper per domain (CV, NLP, tabular/healthcare) with a recommendation of *Label-Free Concept Bottleneck Models* (ICLR 2023); a one-slide PPTX proposal (`DA351_Phase0_Proposal.pptx`).
+**How it was modified / checked:** the team chose the paper. Later checking found a typo in the OpenReview link on the slide (see Section 4).
 
 ---
 
-## Session 5 — CUB dataset download failure
+## Stage B — Phase 1: replication of the paper
 
-**Prompts used**:
-- A `FileNotFoundError: ... data/CUB/train` traceback from `run_experiment.py`
+- **P5** "yes i want to reproduce on all dataset"
+- **P6** `[Button answer to "What compute do you have access to for training?"]` → "Free Google Colab (limited GPU hours)"
+- **P7** "can i run on my local laptop gpu 5050"
+- **P8** "after running all .sh command still i have to download the data separately of directly run the command of training"
+- **P9** "in which folder it will saved automatically saved"
+- **P10** "Why this error" `[pasted traceback: torch.AcceleratorError "CUDA error: resource already mapped" in the pin-memory thread, CIFAR-10 run]`
+- **P11** `[Pasted terminal output: "torch.OutOfMemoryError: CUDA out of memory", 6.00 GiB GPU, CIFAR-10 run — no typed text]`
+- **P12** "tell me the training through next dataset i have to used same like this command python run_experiment.py --dataset cifar10 --model lfcbm --seed 0 --batch_size 64"
+- **P13** "So provide the content of RUN_STEPS_LOCAL.md to update there provide in markdown i will paste there # Step-by-Step: Running the LF-CBM Replication Locally (RTX 5060)" `[followed by the team's pasted draft of the 12-step local guide]`
+- **P14** "in phase 8 can we run loacally on full data just tell me"
+- **P15** "also can we run step 9 locally"
+- **P16** "i also do not want to  take this --imagenet_subset in ImageNet also so how many file code will have to change"
+- **P17** "after changing will DATASET_ROOTS = { "imagenet_train": "D:/datasets/ImageNet/train/", "imagenet_val": "D:/datasets/ImageNet/val/", "cub_train":"data/CUB/train", "cub_val":"data/CUB/test" } step 9 run on full dataset"
+- **P18** "I want to use original dataset from here **Option B — Official image-net.org** 1. Register at https://image-net.org/download.php — approval can take a few days for new accounts, so start this immediately if you haven't 2. Download `ILSVRC2012_img_train.tar` (~138GB) and `ILSVRC2012_img_val.tar` (~6.3GB), plus the devkit (`ILSVRC2012_devkit_t12.tar.gz`) for ground truth 3. This route needs `reorganize_val_devkit.py` (Step 3, devkit variant) instead of the Kaggle CSV variant, since it doesn't include `LOC_val_solution.csv`"
+- **P19** "Why this error" `[pasted traceback: FileNotFoundError 'data/CUB/train' on the CUB run]`
+- **P20** "thanks"
+- **P21** `[Pasted terminal output: Places365 run, FileNotFoundError on ...\data_256_standard\a\airfield\00000001.jpg — no typed text]`
+- **P22** "can i solve this problem def download_images(self) -> None: if path.exists(self.images_dir): return   # <-- just returns, no integrity check at all ..."
+- **P23** "I have already download the 5th data alsoin main directory so where i have to place that data of 138 gb and training data and how to run'"
+- **P24** "why not to keep in project directory folder"
+- **P25** "i will add to .gitignore"
+- **P26** `[Pasted terminal output: Places365 devkit download failed at ~24 kB/s, RuntimeError "File not found or corrupted", then categories_places365.txt missing — no typed text]`
+- **P27** "Is the above error is due to run the command in powershell if we run that in cmd would it be correct"
+- **P28** "I am taking about this error" `[pasted the same devkit error again]`
+- **P29** "It means due to slow network"
+- **P30** `[Screenshot: cmd session — curl download of filelist_places365-standard.tar and certutil MD5 check — no typed text]`
+- **P31** `[Screenshot: Places365 run showing a 26.1 GB download at ~121 kB/s — no typed text]`
+- **P32** "winget install aria2.aria2 aria2c -c -x 8 -s 8 --max-tries=0 --retry-wait=10 -d "$env:USERPROFILE\.cache" -o train_256_places365standard.tar http://data.csail.mit.edu/places/places365/train_256_places365standard.tar CMD command"
+- **P33** `[Pasted terminal output: Places365 run, "RuntimeError: Couldn't open shared file mapping ... error code: <1455>" — no typed text]`
+- **P34** "Have I to change the code of util"
+- **P35** "Why training getting slow ?"
+- **P36** "error hai" `[pasted output: Places365 finished 56,359 batches, then "not enough memory: you tried to allocate 14773944320 bytes", plus follow-up commands]`
+- **P37** "Above placenet365 data have been kept in d drive download folder"
+- **P38** "What i have to do now"
+- **P39** "Dear All, The project evaluation on 29th Sept 2026 is attached here for your reference. Check the time for your team and attend without fail. If you are absent for the presentation, there will be no marks for Phase 1. Also, during the presentation, no need to prepare any slide. First 2 to 3 minutes - Open the research article and summarize it Next 10 minutes - Show and explain the results from the research paper and then show your code and compare the results with the research paper. Last 2 minutes - Summarize the results Description for this presentation to the teacher"
+- **P40** "in this is it training from scretch or fine tuning is happening tell me if fine tuning is happenng then on which model"
+- **P41** `[Pasted the paper's results table: Standard / Standard (sparse) / Label-free CBM across the five datasets]` "What is this standerd accuracy that is not in my result"
+- **P42** "yes" *(asked Claude to document the "Standard row" explanation in the README and docs)*
+- **P43** "How many file have you change and why"
+- **P44** "Provide workflow  and working with explaination  in markdown format"
+- **P45** "Provide contribution of five people"
+- **P46** "Thanks"
 
-**Output received**: Diagnosis that `download_cub.sh` (which uses `wget`) silently failed on Windows since `wget` isn't available by default; a Windows-native replacement using `curl`/`tar` (both built into Windows 10/11) to manually download and extract the CUB-200-2011 dataset and run the authors' `split_cub_dataset.py`.
-
-**How output was modified**: Ran the provided `curl`/`tar` commands as-is in place of the broken shell script; no code changes needed beyond that.
-
----
-
-## Session 6 — Places365 download corruption and server reliability
-
-**Prompts used** (across multiple rounds, with tracebacks/screenshots pasted):
-- A `FileNotFoundError` deep inside a `data_256_standard` path
-- "can i solve this problem [torchvision's download_images bug]"
-- A second `RuntimeError: File not found or corrupted` for the devkit file
-- "Why this error [is it] due to run the command in powershell if we run that in cmd would it be correct"
-- "It means due to slow network"
-- A screenshot confirming a successful MD5 checksum match after re-downloading
-
-**Output received**: Diagnosis that `torchvision`'s `Places365.download_images()` only checks folder *existence*, not completeness, before skipping re-download — meaning an interrupted download leaves permanently-corrupted cached data. A runtime monkeypatch added to `run_experiment.py` (`patch_places365_integrity_check()`) that samples expected files and forces re-download if any are missing. Manual, resumable download instructions using `curl -C -` and later `aria2c` (multi-connection, auto-retry) to work around a known-unreliable source server (`data.csail.mit.edu`), plus exact MD5 checksums to verify downloads before trusting them. Clarification that PowerShell's built-in `curl` alias (`Invoke-WebRequest`) behaves differently from the real `curl.exe`, which can itself cause silent download corruption.
-
-**How output was modified**: Applied the monkeypatch to our local `run_experiment.py`. Used `aria2c` instead of the paper's/torchvision's built-in downloader for the large Places365 archive. Verified every downloaded archive's MD5 before proceeding, per the provided checksums.
-
----
-
-## Session 7 — Windows shared-memory and system RAM limits during training
-
-**Prompts used**:
-- A `RuntimeError: Couldn't open shared file mapping ... error code: <1455>` traceback
-- "So training getting slow ?" (after applying a `num_workers` fix)
-- A `RuntimeError: ... not enough memory: you tried to allocate 14773944320 bytes` traceback after a 6-hour run
-- "Why this error [is it due to] slow network" / follow-up debugging
-
-**Output received**: Diagnosis of a Windows-specific shared-memory/page-file limitation tied to `num_workers=8` in DataLoader calls (fix: reduce to `num_workers=0`), with an explanation of the resulting data-loading slowdown trade-off. Diagnosis that the authors' `save_target_activations`/`save_clip_image_features` functions accumulate all per-image activations in a Python list before a single `torch.cat()` call, requiring ~2x the final tensor size in RAM simultaneously — exceeding available system memory for Places365's ~1.8M images. A tested, idempotent patch script (`patch_memory_efficient_save.py`) that pre-allocates the output tensor and streams batches into it directly, roughly halving peak RAM usage.
-
-**How output was modified**: Applied `num_workers=0` to `original_lfcbm/utils.py`. Ran the provided `patch_memory_efficient_save.py` script to patch the memory-inefficient save functions. Increased our Windows page file size and moved it to a drive with more free space, per the provided guidance.
-
----
-
-## Session 8 — Full ImageNet dataset setup (official source)
-
-**Prompts used**:
-- "I want to use original dataset from here [image-net.org registration route, listing the three official archive files]"
-- "after changing will [DATASET_ROOTS edit] step 9 run on full dataset"
-- "I also do not want to take this --imagenet_subset in ImageNet also so how many file code will have to change"
-- "Above places365 data have been kept in d drive download folder"
-
-**Output received**: Two custom scripts — `extract_train_tars.py` (handles the official ImageNet train archive's nested per-class-tar structure, which differs from a typical flat archive) and `reorganize_val_devkit.py` (reorganizes the flat, unlabeled official validation set into ImageFolder format using the devkit's `meta.mat` + ground-truth text file, as an alternative to a Kaggle CSV-based approach). Confirmation that only one line in `original_lfcbm/data_utils.py` (the `DATASET_ROOTS` paths) needed changing to use the full official dataset instead of the val-only substitution.
-
-**How output was modified**: *[Team to fill in — e.g. "Ran extract_train_tars.py and reorganize_val_devkit.py on our downloaded ImageNet archives", "Edited DATASET_ROOTS in data_utils.py to point to our local paths"]*
+**AI output:** `run_experiment.py` (seeded wrapper around the authors' code), `collect_results.py`, README and docs (dataset commands, local-GPU setup, Windows troubleshooting, workflow, contribution log, presentation script, replication-summary template), `scripts/imagenet_official/` (ImageNet extraction helpers), the original in-place patches to the authors' `utils.py` and `patch_memory_efficient_save.py`, and diagnoses of each error the team pasted.
+**How it was modified / checked:** the team ran every command on its own laptop and reported each failure; fixes were applied only after those real errors (pin-memory crash, Windows paging-file error, missing CUB data because `wget` is not available on Windows, corrupted/interrupted Places365 downloads, a ~14.8 GB RAM spike). Downloads were redone with `curl.exe`/`aria2c` and MD5 checks. The in-place edits to the authors' files were later **removed** (P52) and replaced by a runtime layer, `compat.py`.
 
 ---
 
-## Session 9 — Presentation preparation
+## Stage C — Phase 2: concept-quality filtering
 
-**Prompts used**:
-- "provide the content of RUN_STEPS_LOCAL.md" (consolidating the local setup process into one reference doc)
-- The professor's evaluation format email, pasted verbatim, followed by: "Description for this presentation to the teacher"
-- "in this is it training from scretch or fine tuning is happenng then on which model"
-- "How many classes in each dataset"
+- **P47** "Lets start phase 2 Phase 2 — Our Extension After reproducing the original method, we will investigate its limitations. One possible limitation is concept quality. 4The model may generate concepts that are: Irrelevant For example: • • • • Animal Object Beautiful Nature These may not be useful for identifying the class. Redundant For example: • • • • Long beak Large beak Pointed beak Sharp beak Several concepts may describe almost the same visual characteristic. Therefore, our proposed Phase 2 extension is: Improve the Quality of Automatically Generated Concepts We can add a Concept Quality Filtering module: Label-Free CBM → Generated Concepts → Concept Filter → Better Concepts → Prediction The filter can attempt to: • • • Remove irrelevant concepts Remove redundant concepts Keep useful and meaningful concepts Then we will compare: Original Label-Free CBM VS Improved Label-Free CBM using metrics such as: • • • Classification accuracy Number of concepts Concept redundancy 5• • Concept relevance Interpretability Phase 1 Paper → Label-Free CBM → CIFAR-10/CUB-200 → Reproduce Results → Evaluate ↓ Phase 2 Analyze Limitations → Improve Concept Quality → Filter Concepts → Improved LF-CBM → Compare Results Our final comparison will be: Original Label-Free CBM VS Our Improved Label-Free CBM"
+- **P48** "Tell me how many dataset used for phase 2"
+- **P49** "Then why did you write phase 1 in zip file name just tell me only"
+- **P50** "How many changes have you make like this patch_memory_efficient_save to fix error in the author' repo code till now tell me only"
+- **P51** "I want to ask why the the first data saved in the cashed folder of c drive can i saved that in another drive just tell me only"
+- **P52** "Now provide the zip file of the code by removing all the changes that you make till now and change the path of the of data to download in "D:/datasets/cache" only, keep this pretrained model weights in C drive  and provide zip file with phase 2 and i want to implements phase 2 on all 5 data not only on 3 data. Now provide the zip"
+- **P53** "Discuss with me how the pgase two  resul will different from the original tell me"
 
-**Output received**: A timed, segment-by-segment presentation script matching the professor's specified format (paper summary, live results/code walkthrough, summary), including guidance on framing the real debugging work (Sessions 4–8 above) as a demonstration of reproducibility skill rather than a shortfall. A technical clarification that all backbones (CLIP, ResNet18/50) are used entirely frozen with no fine-tuning — only a small sparse linear layer is trained — and the class counts for each of the five datasets.
-
-**How output was modified**: *[Team to fill in — e.g. "Filled in actual reproduced-accuracy numbers before presenting", "Rehearsed the script and adjusted timing", "Chose our own Phase 2 research gap angle based on the class-count discussion"]*
+**AI output:** an analysis of what LF-CBM already filters (so the gap is stated accurately); a literature check by web search (LaBo, CVPR 2023; VLG-CBM, NeurIPS 2024; mRMR, TPAMI 2005); the Phase 2 method and code in `phase2/` (`concept_quality.py`, `make_filtered_trainer.py` → generated `train_cbm_filtered.py`, `run_phase2.py`, `aggregate_phase2.py`, `rating_study.py`, tests); `compat.py` (runtime Windows/RAM fixes, replacing edits to the authors' files); the restructured project in which `original_lfcbm/` equals upstream commit `fa2869d` except for the dataset download path; `docs/PHASE2_PLAN.md`; and a discussion of expected results backed by one synthetic simulation.
+**How it was modified / checked:** the algorithm and code were written by Claude from the team's outline (P47). The team ran all experiments (3 seeds, 3 budgets, controls and ablations on CIFAR-10, CIFAR-100, CUB-200) and produced every result file. Claude's synthetic tests found a design flaw (an averaged redundancy penalty let duplicates through), which led to the maximum-correlation penalty now used (Section 4).
 
 ---
 
-## Declaration
+## Stage D — Demo web app
 
-We confirm that all code execution, dataset downloading, and result
-generation was performed by our team on our own compute (local GPU / Google
-Colab, as documented per session above). AI assistance was used for
-scaffolding the replication code around the original authors' public
-repository, diagnosing and fixing real runtime errors we encountered during
-our own execution (with every fix verified by us by actually running it),
-and documentation/presentation preparation, as logged above. No AI tool was
-used to fabricate, estimate, or guess at any reported accuracy result — all
-numbers in our replication summary come from our own completed training
-runs.
+- **P54** "I have to make a web app that would be show the comprision of the both pahse one and two and also there we can test both phase with the real world image so discuss first how can we implement this and provide the prompt to generate the image with ChatGPT of the frontend"
+- **P55** "discuss the teck steck used for web app"
+- **P56** "First tell me which folder and file and  are required from directory that nee in backend and frontend"
+- **P57** "Also tell me where the web app will located in the directory"
+- **P58** "We have done the phase one and phae 2 on first three dataset only"
+- **P59** "I have all the download models in my saved_models folder and so Tell me which file code i need to change now"
+- **P60** "show me the full and final directory with the web app in the chat"
+- **P61** "Thanks"
+- **P62** `[Uploaded the two ChatGPT-generated mockup images: Try-it page and Compare page]` "Provide the zip file code of web app with this fronend design that i will add to the main directory"
+- **P63** "Provide prompt to paste in the antygravity that will taste what ever required and add web app same as the attached frontend image in the main directory"
+- **P64** "Phase two is running now so what the next and when i have to handover the project to anty gravity to make web app"
 
-**Team members and roles**: *[fill in — names, roll numbers, and which
-dataset(s)/tasks each member owned]*
+**AI output:** the web-app design (FastAPI backend + plain HTML/JS frontend, no database, local only), the folder plan, two prompts for ChatGPT image generation, and the specification prompt for the coding agent (P63) including data contracts, honesty rules (no invented numbers, "Not run" states) and a test plan. Claude could **not** produce the web-app zip requested in P62 (its sandbox was unavailable at that time), so it wrote the agent prompt instead.
+**How it was modified / checked:** the team generated the mockup images with ChatGPT, implemented the web app (with the coding agent, from the prompt above) and added it to the project. The web app only reads the team's own result files and trained models.
 
-<!-- 
-## Session 4 — Phase 2 (concept quality filtering)
-- **Prompt(s) used**: [paste your actual prompt, e.g. "Lets start phase 2 ... Improve the Quality of Automatically Generated Concepts"]
-- **Output received**: literature check (LaBo, VLG-CBM, mRMR), a gap analysis of what LF-CBM already filters,
-  the `phase2/` code (filter, metrics, generated trainer, runner, aggregator, rating study), synthetic tests, `docs/PHASE2_PLAN.md`.
-- **How output was modified**: [what your team changed, which thresholds/budgets you chose and why, any bugs found when running on real data]
-- **Verification status at hand-over**: synthetic-data unit tests pass; glue code smoke-tested with a numpy stand-in only.
-  All real-data results must come from your own runs.
+---
 
+## Stage E — Phase 2 deliverables and documentation
 
-## Session 5 — Restructure: authors' code restored, Phase 2 on all five datasets
-- **Prompt(s) used**: [paste your actual prompt, e.g. "provide the zip ... removing all the changes ... D:/datasets/cache ... phase 2 on all 5 data"]
-- **Output received**: `original_lfcbm/` restored to upstream except the 8 download-path edits; the Windows/RAM fixes moved
-  into `compat.py` (runtime, switch-off with `--no_compat`); Phase 2 runner/aggregation extended to cifar10/cifar100/cub/places365/imagenet.
-- **How output was modified**: [what you changed; which fixes you actually needed on your machine]
-- **Verification status at hand-over**: logic tests pass with a stand-in for torch; nothing run against real torch or datasets by the assistant. -->
+- **P65** `[Pasted the Phase 2 evaluation brief: tasks, 10-minute video structure, mandatory deliverables (video, original paper PDF, results-and-comparison PDF, code + README + GitHub link), evaluation considerations, submission checklist]`
+- **P66** "yes" *(asked Claude to draft the one-page gap explanation and the video script)*
+- **P67** "First tell have you added page number"
+- **P68** "Do you want me to turn the one-pager into a Word file when my tools are working again, or adjust the wording first? Now  Yes"
+- **P69** "Provide the final dosc file of above according to the guidelines"
+- **P70** `[Uploaded two PDFs: (1) "Experimental_Results_Comparison_Report.pdf", a sample report from a different project (counterfactual simulatability of language-model explanations), used only as a format reference; (2) the team's paper PDF "3646_label_free_concept_bottleneck_research_paper1.pdf"]` "I want the docs file in this format not same but take some references from this and here is our real research paper what ever required to you paste in this docs tell me first with page number i will paste you and als if any things required from the saved jsona and csv result first tell i will give you then you will give me the final docs so tell me if any thing required you first"
+- **P71** `[Pasted result files: results/phase2/cub_summary.md, results/phase2/ALL_datasets_summary.md, results/comparison_table.md, and the rating-study key and blank sheet as CSV]` "Run counts: 30 each github chandank013 rating output" … "also try to follow the submission guidelines"
+- **P72** "provide the ai usage and the fina; read me of phase one and phase 2 and add every prompt that i gave in the history add in the ai usage i will not paste from my side so it will fine you add and i also imple ment the web page so add that in the readme.md also provide only ai usage and readme only"
+
+**AI output:** a one-page research-gap explanation and a timed video script (drafts, with result placeholders); an extraction of paper page numbers and a list of corrections after reading the paper PDF; the Phase 2 *Experimental Results and Comparison* document, with **[PUBLISHED, p.N]** and **[OURS]** tags, built from the team's pasted result files; this file and the final README.
+**How it was modified / checked:** page numbers were checked against the team's 28-page PDF. All numbers in the results document come from the team's pasted files. The sample report from another project was used only for structure ideas (published-vs-ours tagging, extract slots with page numbers, setup comparison, "what it does and does not show"); **none of its text, numbers or figures was copied.** Placeholders were left for items only the team can supply (team names, hardware, screenshots, figures).
+
+---
+
+## 3. Files in the repository written or substantially drafted with AI help
+
+| File or folder | Written by | Team's role |
+|---|---|---|
+| `run_experiment.py`, `collect_results.py`, `compat.py` | Claude | Ran, debugged on real hardware |
+| `phase2/` (filter, trainer generator, runner, aggregation, rating tool, tests) | Claude | Ran all experiments; chose to run 3 of 5 datasets |
+| `scripts/imagenet_official/`, `scripts/move_cache_to_d.bat` | Claude | Used as needed |
+| `docs/` (plan, workflow, troubleshooting, dataset commands, presentation script, contributions) | Claude, from the team's messages | Reviewed; filled in the real details |
+| `README.md`, `AI_USAGE.md` | Claude, from the chat history | Reviewed |
+| `webapp/` | Coding agent, from a prompt written by Claude | Integrated and ran it |
+| UI mockup images | ChatGPT, from prompts written by Claude | Generated and supplied the images |
+| `original_lfcbm/` | Authors (Oikarinen et al., ICLR 2023) | One edit: dataset download path in `data_utils.py` |
+
+## 4. Errors in AI output that were found and corrected
+
+Recorded so that nobody relies on an earlier statement that was wrong.
+
+1. **Paper link typo.** The Phase 0 slide gave the OpenReview id `FlCq47MNvBA`; the correct id is `FlCg47MNvBA`.
+2. **Wrong "published" numbers.** The AI took the Label-free CBM numbers from the authors' GitHub README (86.37 / 65.27 / 74.59 / 43.71 / 71.98). The paper's Table 2 (p.6) says 86.40 / 65.13 / 74.31 / 43.68 / 71.95 (mean over three runs). Reports use Table 2.
+3. **What is trained.** The AI said the sparse final layer was "the only trained part". The paper trains a concept projection layer *and* a sparse final layer; only the backbone is frozen.
+4. **Incomplete description of the authors' filters.** Phase 2 was first described with three filters. The paper (p.4–5) has five, including a text-space duplicate filter (> 0.9); "animal" is already removed on CIFAR-10 for being too close to "dog" (p.14).
+5. **Design flaw in the filter.** An averaged redundancy penalty let duplicates through; found by a synthetic test and replaced by the maximum-correlation penalty.
+6. **Memory bug.** The top-k baseline sorted a full copy of the concept-score matrix; rewritten to work in chunks.
+7. **Missing fix in a delivered zip.** One zip lacked the `num_workers` fix that its documentation claimed; caught on re-check.
+8. **Stale script.** `move_cache_to_d.bat` would have moved model weights off the C: drive; replaced.
+9. **Concepts-per-class figures.** First computed from the shipped concept files; corrected with the paper's final counts (p.6).
+10. **Wrong date assumption.** An early plan assumed a start date that did not match the real date.
+11. **Open issue.** *Standard (sparse)* on CIFAR-10 gave 88.33% against 82.96% published. The suspected cause is a default λ (0.0007) in our wrapper, instead of the authors' script default. It has **not** been re-run; the result is reported as not reproduced.
+
+## 5. Declaration
+
+All code execution, dataset downloading and result generation were performed by the team on its own machine. AI assistance was used for scaffolding, code, debugging advice, documentation and drafting, as logged above. No AI tool was used to fabricate, estimate or alter experimental results. Third-party code (the authors' LF-CBM repository), datasets and papers are cited in `README.md`.
